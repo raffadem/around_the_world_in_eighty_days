@@ -44,7 +44,7 @@ class AroundTheWorld(object):
                  country_start: str,
                  n_min: int = 3,
                  x_size: float = 0.3,
-                 y_size: float = 0.1,
+                 y_size: float = 0.15,
                  rise_factor: float = 2):
         # If the dataframe is not a pandas.Dataframe it rise a TypeError
         if not isinstance(dataframe, pd.DataFrame):
