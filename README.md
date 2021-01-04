@@ -1,26 +1,56 @@
-# around_the_world_in_eighty_days
+# Around the world in eighty days
 
-P8: Il giro del mondo in 80 giorni
-Si consideri l'insieme dei dati che descrivono alcune delle principali città del mondo (link). Si supponga che sia sempre possibile viaggiare da ogni città fino alle 3 città più vicine e che tale viaggio richieda 2 ore per la città più vicina, 4 ore per la seconda città più vicina e 8 ore per la terza più vicina. Inoltre il viaggio richiede 2 ore aggiuntive se la città di destinazione è in un'altra nazione rispetto alla città di partenza e altre 2 ore aggiuntive se la città di destinazione ha più di 200 000 abitanti.
+## Table of Contents
 
-Partendo la Londra e viaggiando sempre verso Est, è possible compiere il giro del mondo tornando a Londra in 80 giorni? Quanto tempo si impiega al minimo?
+1. [General Info](#general-info)
+2. [Usage](#usage)
+2. [Technologies](#technologies)
+3. [Authors](#authors)
+4. [License](#license)
 
-### step1: import e analisi dati
-1. importare i dati 
-2. modifica dati population come flag (gt 200K)
-3. decodificare le colonne latitudine e longitudine in ascissa e ordinata(floating point)
-4. ordinare per longitudine crescente
+### General Info
 
-### step2: creazione griglia
-1. creare griglia(dimensione variabile in base al numero(soglia, inferiore >=3 e superiore<=10(?)) città?)
+Like a new Phileas Fogg you have the desire to travel around the world always moving east, could you do it in 80 days?
+The aim of the project is to help you and show you the best way to fulfill your dream.
+The starting point is the city of London (GB), but it could be the one you want.
 
-### step3: calcolo peso
-1. calcolare misura euclidea delle n città nel perimetro
-2. date le 3 più vicine e poi assegnare gli ulteriori pesi(popolazione(flag già calcolato) + if su country)
-3. prendere il peso minore, in caso di parità di peso prendere la città più lontana(longitudine)
-4. reiterato fino a quando non arrivi a londra(di nuovo)
-5. while(reitera fino a quando non c'è londra nel tuo quadrato(tra le 3 più vicine), in quel caso prendi londra)
-(attenzione che londra ci deve stare, pensare ad una striscia di terra)
+#### Dataset definition
 
-### stepn: visualizzazione con geopandas
-1. visualizzare le città e il cammino con geopandas
+The traveler can go through cities in the [worldcities.xlsx](worldcities.xlsx) dataset, from which we extract information about the city name, the country, the iso 2 (unique identifier code of the country), longitude and latitude, and the population. 
+Each city is assigned a weight based on the following criteria:
+1. **Distance**: at each step, according to the increasing Euclidean distance, the 3 closest cities are assigned values 2, 4, 8 respectively. To perform this calculation, the function [euclidean_distances](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.euclidean_distances.html), of sklearn library, is used.
+2. **Population**: a weight of value 2 is added if the city has a population greater than or equal to 200 thousand inhabitants.
+3. **Country**: a weight of value 2 is added if the city in the next step is located in a different country than the previous one.
+
+#### Grid variability
+
+At each step, the algorithm calculates the distance of the cities present within a **rectangle**.
+It has as its **base** the distance between the longitude of the starting city, and a subsequent point at a variable distance given as input (x_size). 
+The **height** changes depending on if the current visited city is northern/southern (the latitude is greater/lesser) than the starting city:
+* if the current city is *northern* that the starting city, it has as its height  the distance generated between the latitude of the current city, adding a quantity (y_size/2) and the latitude of the starting city, subtracting a quantity (y_size/2) 
+* if the current city is *southern* that the starting city, it has as its height  the distance generated between the latitude of the starting city, adding a quantity (y_size/2) and the latitude of the current city, subtracting a quantity (y_size/2) 
+
+This last operation is differentiated between north and south to ensure that the traveler does not move too much towards these two directions but always moves to the east (to the right). 
+The size of the polygon taken into account at each step is variable  to ensure the functionality of the algorithm with a minimum number of at least 3 cities. 
+In particular, in addition to the variability of the size of the input values (x_size, y_size) which guarantees the starting size of the polygon, the absence in the rectangle of at least 3 cities makes these dimensions vary by a multiplicative rise_factor (by default equal to 2).
+
+#### Path
+The algorithm that is obtained taking as values of x_size, y_size, and rise_factor those of default (x_size=0.3 and y_size=0.15 and rise_factor=2) guarantees that the traveler returns to London before the 80 days, in fact, it ends after 666 steps and 62.42 days (1498 hours).
+
+## Usage
+
+See the notebook document [main.ipynb](main.ipynb) to see how to run the algorithm.
+
+## Technologies
+
+The algorithm is written in [python 3.8+](https://docs.python.org/3/) and mainly uses [pandas](https://pandas.pydata.org/docs/), [matplotlib](https://matplotlib.org/contents.html) and [sklearn](https://scikit-learn.org/stable/user_guide.html) libraries.
+It consists of 2 files, the python file [around_the_world.py](around_the_world.py) containing the class, and the notebook document [main.ipynb](main.ipynb) with the functions to run the algorithm.
+
+## Authors
+
+* **Raffaella Michaela DeMarco**
+* **Pietro Russo**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more details.
