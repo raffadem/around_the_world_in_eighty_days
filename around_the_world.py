@@ -4,6 +4,7 @@ from sklearn.metrics.pairwise import euclidean_distances
 from IPython.display import clear_output
 import matplotlib.patches as patches
 import time
+from typing import List, Tuple, Union
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -87,21 +88,21 @@ class AroundTheWorld(object):
         self._x_size_default: float = self.x_size
         self._y_size_default: float = self.y_size
         """
-        _coord_start : (float, float)
+        _coord_start : Tuple[float, float]
             Coordinates of the starting city declared as (longitude, latitude)
         """
-        self._coord_start: (float, float) = None  # (lng, lat)
+        self._coord_start: Tuple[float, float] = None  # (lng, lat)
         """
         _city_step : str
             Name of the current city of the journey route
         country_start : str
             Name of the current country of the journey route
-        _coord_step : (float, float)
+        _coord_step : Tuple[float, float]
             Coordinates of the current city of the journey route declared as (longitude, latitude)
         """
         self._city_step: str = self.city_start
         self._country_step: str = self.country_start
-        self._coord_step: (float, float) = None  # (lng, lat)
+        self._coord_step: Tuple[float, float] = None  # (lng, lat)
         """
         _lat_max : float
             Maximum latitude used as a reference
@@ -359,14 +360,14 @@ class AroundTheWorld(object):
         return pop_weight + country_weight
 
     @staticmethod
-    def calculate_distance(row: pd.Series, point_city_step: (float, float)) -> float:
+    def calculate_distance(row: pd.Series, point_city_step: Tuple[float, float]) -> float:
         """It calculates the euclidean distance between the coordinates of a city and the current city
 
         Parameters
         ----------
         row: pd.Series
             Row of the dataframe of cities that are inside the grid
-        point_city_step: (float, float)
+        point_city_step: Tuple[float, float]
             Coordinates of the current city
 
         Returns
@@ -496,24 +497,64 @@ class AroundTheWorld(object):
         # Add the point of starting coordinates
         ax.scatter(self._coord_start[0], self._coord_start[1], color="red", marker="+", s=100)
         # Assign labels
-        plt.xlabel("Longitude", fontsize=100)
-        plt.ylabel("Latitude", fontsize=100)
+        plt.xlabel("Longitude", fontsize=75)
+        plt.ylabel("Latitude", fontsize=75)
+        # Set axes limits
+        plt.xlim([-180, 180])
+        plt.ylim([-90, 90])
         # Add the grid
         ax.grid()
 
         # If the latitude and longitude values exists
         if (self._lng_min is not None and self._lng_max is not None and
                 self._lat_min is not None and self._lat_max is not None):
-            # Add the rectangle of the grid
-            ax.add_patch(
-                patches.Rectangle(
-                    xy=(self._lng_min, self._lat_min),  # Point of origin
-                    width=self._lng_max - self._lng_min,
-                    height=self._lat_max - self._lat_min,
-                    linewidth=1,
-                    color="blue",
-                    fill=False
+            # Prepare the rectangles according to the coordinates max and min of the grid
+            rectangle_values = self._prepare_rectangle_values()
+            for origin_point, width, height in rectangle_values:
+                # Add the rectangle of the grid
+                ax.add_patch(
+                    patches.Rectangle(
+                        xy=origin_point,  # Point of origin
+                        width=width,
+                        height=height,
+                        linewidth=3,
+                        color="blue",
+                        fill=False
+                    )
                 )
-            )
         # Plot the figure
         plt.show()
+
+    def _prepare_rectangle_values(self) -> List[Tuple[Tuple[float, float], float, float]]:
+        """Calculate the point of the origin, the width and the height of the rectangle,
+        according to the coordinates max and min of the grid
+
+        Returns
+        -------
+        List[Tuple[Tuple[float, float], float, float]]
+            A list of tuples of point of the origin, the width and the height of the rectangle
+        """
+        rectangle_values: List[Tuple[Tuple[float, float], float, float]] = []  # point of origin, width, height
+        # If longitude min and max are both positive or negative,
+        # or the longitude min is negative and the longitude max is positive
+        if (self._lng_min >= 0 and self._lng_max >= 0) or \
+                (self._lng_min <= 0 and self._lng_max <= 0) or \
+                (self._lng_min <= 0 and self._lng_max >= 0):
+            # Prepare only one rectangle
+            rectangle_values = [
+                ((self._lng_min, self._lat_min),
+                 self._lng_max - self._lng_min,
+                 self._lat_max - self._lat_min)]
+        else:
+            # Otherwise, there are 2 rectangles, one on the far right.
+            # the other on the far left
+            rectangle_values = [
+                ((self._lng_min, self._lat_min),
+                 180 - self._lng_min,
+                 self._lat_max - self._lat_min),
+                ((-180, self._lat_min),
+                 self._lng_max + 180,
+                 self._lat_max - self._lat_min)
+            ]
+        # Return rectangle values
+        return rectangle_values
