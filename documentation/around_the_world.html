@@ -58,7 +58,6 @@ class AroundTheWorld(object):
         Size of the latitudinal side of the grid used to search for the nearest cities
     rise_factor : float
         Multiplication factor to increase the grid used to search for the nearest cities
-
     map_city : pd.DataFrame
         Dataset of all cities of the journey route
     hours : int
@@ -107,48 +106,38 @@ class AroundTheWorld(object):
         self.map_city: pd.DataFrame = pd.DataFrame([], columns=[&#34;city&#34;, &#34;lat&#34;, &#34;lng&#34;, &#34;country&#34;, &#34;iso2&#34;])
         self.hours: int = 0
         self.n_steps: int = 0
-        &#34;&#34;&#34;
-        _x_size_default : float
-            Default size of the longitudinal side of the grid used to search for the nearest cities
-        _y_size_default : float
-            Default size of the latitudinal side of the grid used to search for the nearest cities
-        &#34;&#34;&#34;
+        # _x_size_default : float
+        #    Default size of the longitudinal side of the grid used to search for the nearest cities
+        # _y_size_default : float
+        #    Default size of the latitudinal side of the grid used to search for the nearest cities
         self._x_size_default: float = self.x_size
         self._y_size_default: float = self.y_size
-        &#34;&#34;&#34;
-        _coord_start : Tuple[float, float]
-            Coordinates of the starting city declared as (longitude, latitude)
-        &#34;&#34;&#34;
+        # _coord_start : Tuple[float, float]
+        #    Coordinates of the starting city declared as (longitude, latitude)
         self._coord_start: Tuple[float, float] = None  # (lng, lat)
-        &#34;&#34;&#34;
-        _city_step : str
-            Name of the current city of the journey route
-        country_start : str
-            Name of the current country of the journey route
-        _coord_step : Tuple[float, float]
-            Coordinates of the current city of the journey route declared as (longitude, latitude)
-        &#34;&#34;&#34;
+        # _city_step : str
+        #    Name of the current city of the journey route
+        # _country_step : str
+        #    Name of the current country of the journey route
+        # _coord_step : Tuple[float, float]
+        #    Coordinates of the current city of the journey route declared as (longitude, latitude)
         self._city_step: str = self.city_start
         self._country_step: str = self.country_start
         self._coord_step: Tuple[float, float] = None  # (lng, lat)
-        &#34;&#34;&#34;
-        _lat_max : float
-            Maximum latitude used as a reference
-        _lat_min : float
-            Minimum latitude used as a reference
-        _lng_max : float
-            Maximum longitude used as a reference
-        _lng_min : float
-            Minimum longitude used as a reference
-        &#34;&#34;&#34;
+        # _lat_max : float
+        #    Maximum latitude used as a reference
+        # _lat_min : float
+        #    Minimum latitude used as a reference
+        # _lng_max : float
+        #    Maximum longitude used as a reference
+        # _lng_min : float
+        #    Minimum longitude used as a reference
         self._lat_max: float = None
         self._lat_min: float = None
         self._lng_min: float = None
         self._lng_max: float = None
-        &#34;&#34;&#34;
-        _is_near_destination : bool
-            Minimum longitude used as a reference
-        &#34;&#34;&#34;
+        # _is_near_destination : bool
+        #    Minimum longitude used as a reference
         self._is_near_destination: bool = False
         # Set coordinates of the starting city, and take it as current coordinates
         self._set_coordinates()
@@ -650,7 +639,6 @@ class AroundTheWorld(object):
         Size of the latitudinal side of the grid used to search for the nearest cities
     rise_factor : float
         Multiplication factor to increase the grid used to search for the nearest cities
-
     map_city : pd.DataFrame
         Dataset of all cities of the journey route
     hours : int
@@ -699,48 +687,38 @@ class AroundTheWorld(object):
         self.map_city: pd.DataFrame = pd.DataFrame([], columns=[&#34;city&#34;, &#34;lat&#34;, &#34;lng&#34;, &#34;country&#34;, &#34;iso2&#34;])
         self.hours: int = 0
         self.n_steps: int = 0
-        &#34;&#34;&#34;
-        _x_size_default : float
-            Default size of the longitudinal side of the grid used to search for the nearest cities
-        _y_size_default : float
-            Default size of the latitudinal side of the grid used to search for the nearest cities
-        &#34;&#34;&#34;
+        # _x_size_default : float
+        #    Default size of the longitudinal side of the grid used to search for the nearest cities
+        # _y_size_default : float
+        #    Default size of the latitudinal side of the grid used to search for the nearest cities
         self._x_size_default: float = self.x_size
         self._y_size_default: float = self.y_size
-        &#34;&#34;&#34;
-        _coord_start : Tuple[float, float]
-            Coordinates of the starting city declared as (longitude, latitude)
-        &#34;&#34;&#34;
+        # _coord_start : Tuple[float, float]
+        #    Coordinates of the starting city declared as (longitude, latitude)
         self._coord_start: Tuple[float, float] = None  # (lng, lat)
-        &#34;&#34;&#34;
-        _city_step : str
-            Name of the current city of the journey route
-        country_start : str
-            Name of the current country of the journey route
-        _coord_step : Tuple[float, float]
-            Coordinates of the current city of the journey route declared as (longitude, latitude)
-        &#34;&#34;&#34;
+        # _city_step : str
+        #    Name of the current city of the journey route
+        # _country_step : str
+        #    Name of the current country of the journey route
+        # _coord_step : Tuple[float, float]
+        #    Coordinates of the current city of the journey route declared as (longitude, latitude)
         self._city_step: str = self.city_start
         self._country_step: str = self.country_start
         self._coord_step: Tuple[float, float] = None  # (lng, lat)
-        &#34;&#34;&#34;
-        _lat_max : float
-            Maximum latitude used as a reference
-        _lat_min : float
-            Minimum latitude used as a reference
-        _lng_max : float
-            Maximum longitude used as a reference
-        _lng_min : float
-            Minimum longitude used as a reference
-        &#34;&#34;&#34;
+        # _lat_max : float
+        #    Maximum latitude used as a reference
+        # _lat_min : float
+        #    Minimum latitude used as a reference
+        # _lng_max : float
+        #    Maximum longitude used as a reference
+        # _lng_min : float
+        #    Minimum longitude used as a reference
         self._lat_max: float = None
         self._lat_min: float = None
         self._lng_min: float = None
         self._lng_max: float = None
-        &#34;&#34;&#34;
-        _is_near_destination : bool
-            Minimum longitude used as a reference
-        &#34;&#34;&#34;
+        # _is_near_destination : bool
+        #    Minimum longitude used as a reference
         self._is_near_destination: bool = False
         # Set coordinates of the starting city, and take it as current coordinates
         self._set_coordinates()
@@ -1267,16 +1245,6 @@ def calculate_weight(row: pd.Series, country_step: str) -&gt; int:
 </details>
 </dd>
 </dl>
-<h3>Instance variables</h3>
-<dl>
-<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.n_steps"><code class="name">var <span class="ident">n_steps</span></code></dt>
-<dd>
-<div class="desc"><p>_x_size_default : float
-Default size of the longitudinal side of the grid used to search for the nearest cities
-_y_size_default : float
-Default size of the latitudinal side of the grid used to search for the nearest cities</p></div>
-</dd>
-</dl>
 <h3>Methods</h3>
 <dl>
 <dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.check_grid_city"><code class="name flex">
@@ -1743,7 +1711,6 @@ if it doesn't contain at least n_min cities, it rises the grid size and it calls
 <li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.calculate_weight" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.calculate_weight">calculate_weight</a></code></li>
 <li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.check_grid_city" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.check_grid_city">check_grid_city</a></code></li>
 <li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.generate_grid" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.generate_grid">generate_grid</a></code></li>
-<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.n_steps" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.n_steps">n_steps</a></code></li>
 <li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.plot_world" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.plot_world">plot_world</a></code></li>
 <li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.query" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.query">query</a></code></li>
 <li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.step" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.step">step</a></code></li>

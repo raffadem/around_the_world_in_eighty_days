@@ -30,7 +30,6 @@ class AroundTheWorld(object):
         Size of the latitudinal side of the grid used to search for the nearest cities
     rise_factor : float
         Multiplication factor to increase the grid used to search for the nearest cities
-
     map_city : pd.DataFrame
         Dataset of all cities of the journey route
     hours : int
@@ -79,48 +78,38 @@ class AroundTheWorld(object):
         self.map_city: pd.DataFrame = pd.DataFrame([], columns=["city", "lat", "lng", "country", "iso2"])
         self.hours: int = 0
         self.n_steps: int = 0
-        """
-        _x_size_default : float
-            Default size of the longitudinal side of the grid used to search for the nearest cities
-        _y_size_default : float
-            Default size of the latitudinal side of the grid used to search for the nearest cities
-        """
+        # _x_size_default : float
+        #    Default size of the longitudinal side of the grid used to search for the nearest cities
+        # _y_size_default : float
+        #    Default size of the latitudinal side of the grid used to search for the nearest cities
         self._x_size_default: float = self.x_size
         self._y_size_default: float = self.y_size
-        """
-        _coord_start : Tuple[float, float]
-            Coordinates of the starting city declared as (longitude, latitude)
-        """
+        # _coord_start : Tuple[float, float]
+        #    Coordinates of the starting city declared as (longitude, latitude)
         self._coord_start: Tuple[float, float] = None  # (lng, lat)
-        """
-        _city_step : str
-            Name of the current city of the journey route
-        country_start : str
-            Name of the current country of the journey route
-        _coord_step : Tuple[float, float]
-            Coordinates of the current city of the journey route declared as (longitude, latitude)
-        """
+        # _city_step : str
+        #    Name of the current city of the journey route
+        # _country_step : str
+        #    Name of the current country of the journey route
+        # _coord_step : Tuple[float, float]
+        #    Coordinates of the current city of the journey route declared as (longitude, latitude)
         self._city_step: str = self.city_start
         self._country_step: str = self.country_start
         self._coord_step: Tuple[float, float] = None  # (lng, lat)
-        """
-        _lat_max : float
-            Maximum latitude used as a reference
-        _lat_min : float
-            Minimum latitude used as a reference
-        _lng_max : float
-            Maximum longitude used as a reference
-        _lng_min : float
-            Minimum longitude used as a reference
-        """
+        # _lat_max : float
+        #    Maximum latitude used as a reference
+        # _lat_min : float
+        #    Minimum latitude used as a reference
+        # _lng_max : float
+        #    Maximum longitude used as a reference
+        # _lng_min : float
+        #    Minimum longitude used as a reference
         self._lat_max: float = None
         self._lat_min: float = None
         self._lng_min: float = None
         self._lng_max: float = None
-        """
-        _is_near_destination : bool
-            Minimum longitude used as a reference
-        """
+        # _is_near_destination : bool
+        #    Minimum longitude used as a reference
         self._is_near_destination: bool = False
         # Set coordinates of the starting city, and take it as current coordinates
         self._set_coordinates()
