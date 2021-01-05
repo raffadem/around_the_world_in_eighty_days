@@ -1,0 +1,1764 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>around_the_world_in_eighty_days.around_the_world API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>around_the_world_in_eighty_days.around_the_world</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import pandas as pd
+from matplotlib import pyplot as plt
+from sklearn.metrics.pairwise import euclidean_distances
+from IPython.display import clear_output
+import matplotlib.patches as patches
+import time
+from typing import List, Tuple, Union
+import warnings
+
+warnings.filterwarnings(&#34;ignore&#34;)
+
+
+class AroundTheWorld(object):
+    &#34;&#34;&#34;
+    Given a starting city, it travels around the world returning to the city of departure.
+
+    Attributes
+    ----------
+    dataframe : pd.DataFrame
+        Dataset of all cities
+    city_start : str
+        Name of the starting city
+    country_start : str
+        Name of the starting country
+    n_min : int
+        Number of the closest cities to which it is possible to travel
+    x_size : float
+        Size of the longitudinal side of the grid used to search for the nearest cities
+    y_size : float
+        Size of the latitudinal side of the grid used to search for the nearest cities
+    rise_factor : float
+        Multiplication factor to increase the grid used to search for the nearest cities
+
+    map_city : pd.DataFrame
+        Dataset of all cities of the journey route
+    hours : int
+        Total number of journey hours
+    n_steps : int
+        Total number of steps of the journey
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 dataframe: pd.DataFrame,
+                 city_start: str,
+                 country_start: str,
+                 n_min: int = 3,
+                 x_size: float = 0.3,
+                 y_size: float = 0.15,
+                 rise_factor: float = 2):
+        # If the dataframe is not a pandas.Dataframe it rise a TypeError
+        if not isinstance(dataframe, pd.DataFrame):
+            raise TypeError(f&#34;The given dataframe must to be a \&#34;pandas.Dataframe\&#34; type, not \&#34;{type(dataframe)}\&#34;&#34;)
+        self.dataframe: pd.DataFrame = self._initialise_dataframe(dataframe)
+        # If the city start is not a string it rise a TypeError
+        if not isinstance(city_start, str):
+            raise TypeError(f&#34;The given city_start must to be a \&#34;str\&#34; type, not \&#34;{type(city_start)}\&#34;&#34;)
+        self.city_start: str = city_start
+        # If the country start is not a string it rise a TypeError
+        if not isinstance(country_start, str):
+            raise TypeError(f&#34;The given country_start must to be a \&#34;str\&#34; type, not \&#34;{type(country_start)}\&#34;&#34;)
+        self.country_start: str = country_start
+        # If the n_min is not a integer it rise a TypeError
+        if not isinstance(n_min, int):
+            raise TypeError(f&#34;The given n_min must to be a \&#34;int\&#34; type, not \&#34;{type(n_min)}\&#34;&#34;)
+        self.n_min: int = n_min
+        # If the x_size is not a integer or a float it rise a TypeError
+        if not isinstance(x_size, (int, float)):
+            raise TypeError(f&#34;The given x_size must to be a \&#34;int\&#34; or \&#34;float\&#34; type, not \&#34;{type(x_size)}\&#34;&#34;)
+        self.x_size: float = float(x_size)
+        # If the y_size is not a integer or a float it rise a TypeError
+        if not isinstance(y_size, (int, float)):
+            raise TypeError(f&#34;The given y_size must to be a \&#34;int\&#34; or \&#34;float\&#34; type, not \&#34;{type(y_size)}\&#34;&#34;)
+        self.y_size: float = float(y_size)
+        # If the rise_factor is not a integer or a float it rise a TypeError
+        if not isinstance(rise_factor, (int, float)):
+            raise TypeError(f&#34;The given y_size must to be a \&#34;int\&#34; or \&#34;float\&#34; type, not \&#34;{type(rise_factor)}\&#34;&#34;)
+        self.rise_factor: float = float(rise_factor)
+
+        self.map_city: pd.DataFrame = pd.DataFrame([], columns=[&#34;city&#34;, &#34;lat&#34;, &#34;lng&#34;, &#34;country&#34;, &#34;iso2&#34;])
+        self.hours: int = 0
+        self.n_steps: int = 0
+        &#34;&#34;&#34;
+        _x_size_default : float
+            Default size of the longitudinal side of the grid used to search for the nearest cities
+        _y_size_default : float
+            Default size of the latitudinal side of the grid used to search for the nearest cities
+        &#34;&#34;&#34;
+        self._x_size_default: float = self.x_size
+        self._y_size_default: float = self.y_size
+        &#34;&#34;&#34;
+        _coord_start : Tuple[float, float]
+            Coordinates of the starting city declared as (longitude, latitude)
+        &#34;&#34;&#34;
+        self._coord_start: Tuple[float, float] = None  # (lng, lat)
+        &#34;&#34;&#34;
+        _city_step : str
+            Name of the current city of the journey route
+        country_start : str
+            Name of the current country of the journey route
+        _coord_step : Tuple[float, float]
+            Coordinates of the current city of the journey route declared as (longitude, latitude)
+        &#34;&#34;&#34;
+        self._city_step: str = self.city_start
+        self._country_step: str = self.country_start
+        self._coord_step: Tuple[float, float] = None  # (lng, lat)
+        &#34;&#34;&#34;
+        _lat_max : float
+            Maximum latitude used as a reference
+        _lat_min : float
+            Minimum latitude used as a reference
+        _lng_max : float
+            Maximum longitude used as a reference
+        _lng_min : float
+            Minimum longitude used as a reference
+        &#34;&#34;&#34;
+        self._lat_max: float = None
+        self._lat_min: float = None
+        self._lng_min: float = None
+        self._lng_max: float = None
+        &#34;&#34;&#34;
+        _is_near_destination : bool
+            Minimum longitude used as a reference
+        &#34;&#34;&#34;
+        self._is_near_destination: bool = False
+        # Set coordinates of the starting city, and take it as current coordinates
+        self._set_coordinates()
+
+    @staticmethod
+    def _initialise_dataframe(dataframe: pd.DataFrame) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Given a dataframe with all cities, it selects interested columns,
+        it adds the flag population and visited city columns.
+
+        Parameters
+        ----------
+        dataframe : pd.DataFrame
+            Dataset of all cities
+
+        Returns
+        -------
+        pd.DataFrame
+            The initialised dataframe
+        &#34;&#34;&#34;
+        # Prepare a list with the interested column names
+        columns = [&#34;city&#34;, &#34;lat&#34;, &#34;lng&#34;, &#34;country&#34;, &#34;iso2&#34;, &#34;population&#34;]
+        # Deep copy of the dataframe
+        df = dataframe[columns].copy()
+        # Add the flag for the population, in the dataframe.
+        # It is 1 if a city has a population is greater than 200000, 0 otherwise
+        df[&#34;flg_pop&#34;] = df.population.apply(lambda x: 1 if not (pd.isna(x)) and x &gt; 200000 else 0)
+        # Initialise the visited city column to 0
+        df[&#34;visited_city&#34;] = 0
+        return df
+
+    def _set_coordinates(self):
+        &#34;&#34;&#34;Set the longitude and the latitude of the starting city, and take it as current coordinates
+        &#34;&#34;&#34;
+        # Get the row that contains the starting city and country
+        temp_dataframe = self.dataframe.loc[
+            (self.dataframe[&#34;city&#34;] == self.city_start) &amp;
+            (self.dataframe[&#34;iso2&#34;] == self.country_start)]
+        # Select the longitude and the latitude of the previous dataframe,
+        # get the first row, add values in a tuple and store it as coordinates start
+        self._coord_start = tuple(temp_dataframe[[&#34;lng&#34;, &#34;lat&#34;]].iloc[0])
+        # Store the previous coordinates as coordinates step too
+        self._coord_step = self._coord_start
+
+    def generate_grid(self):
+        &#34;&#34;&#34;Generate the grid used to search for the nearest cities
+        as range of maximum and minimum latitudes and longitudes.
+        &#34;&#34;&#34;
+        # If the latitude of the current city is greater than the latitude of the starting city
+        if self._coord_step[1] &gt;= self._coord_start[1]:
+            # As latitude max is used the latitude of the current city plus half of the size of y_size
+            self._lat_max = self._coord_step[1] + self.y_size / 2
+            # As latitude min is used the latitude of the starting city minus half of the size of y_size
+            self._lat_min = self._coord_start[1] - self.y_size / 2
+        else:
+            # As latitude max is used the latitude of the starting city plus half of the size of y_size
+            self._lat_max = self._coord_start[1] + self.y_size / 2
+            # As latitude min is used the latitude of the current city minus half of the size of y_size
+            self._lat_min = self._coord_step[1] - self.y_size / 2
+
+        # The longitude min is the longitude of the current city
+        self._lng_min = self._coord_step[0]
+
+        # If it is near the destination
+        if self._is_near_destination:
+            # The longitude max is slightly higher than the starting longitude
+            self._lng_max = self._coord_start[0] + 0.005
+        else:
+            # The longitude max is the longitude of the current city plus x_size
+            self._lng_max = self._coord_step[0] + self.x_size
+
+        # Fix the latitude values of the grid
+        if self._lat_max &gt;= 90:
+            self._lat_max -= 180
+        if self._lat_min &lt;= -90:
+            self._lat_min += 180
+        # Fix the longitude values of the grid
+        if self._lng_max &gt;= 180:
+            self._lng_max -= 360
+        if self._lng_min &lt;= -180:
+            self._lng_min += 360
+        # print(self.lat_max, self.lat_min, self.lng_min, self.lng_max)
+
+    def query(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Select the cities that are located within the grid,
+        shaped by the range of maximum and minimum latitudes and longitudes.
+
+        Returns
+        -------
+        pd.DataFrame
+            Dataframe that contains the cities that are inside the grid
+        &#34;&#34;&#34;
+        # Initialise the conditions for the latitude and the longitude
+        lat_condition = False
+        lng_condition = False
+
+        # If both latitude values of the grid are positive or negative
+        if (self._lat_min &gt;= 0 and self._lat_max &gt;= 0) or (self._lat_min &lt;= 0 and self._lat_max &lt;= 0):
+            lat_condition = (self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= self._lat_max)
+        # If latitude min is positive and latitude max is negative
+        elif self._lat_min &gt;= 0 and self._lat_max &lt;= 0:
+            # The condition considers the highest and the lowest value of the latitude values
+            lat_condition = ((self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= 90)) | (
+                    (self.dataframe[&#34;lat&#34;] &gt;= -90) &amp; (self.dataframe[&#34;lat&#34;] &lt;= self._lat_max))
+        # If latitude min is negative and latitude max is positive
+        elif self._lat_min &lt;= 0 and self._lat_max &gt;= 0:
+            # The condition considers the 0 value between the latitude values
+            lat_condition = ((self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= 0)) | (
+                    (self.dataframe[&#34;lat&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lat&#34;] &lt; self._lat_max))
+
+        # If both longitude values of the grid are positive or negative
+        if (self._lng_min &gt;= 0 and self._lng_max &gt;= 0) or (self._lng_min &lt;= 0 and self._lng_max &lt;= 0):
+            lng_condition = (self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= self._lng_max)
+        # If longitude min is positive and longitude max is negative
+        elif self._lng_min &gt;= 0 and self._lng_max &lt;= 0:
+            # The condition considers the highest and the lowest value of the longitude values
+            lng_condition = ((self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= 180)) | (
+                    (self.dataframe[&#34;lng&#34;] &gt;= -180) &amp; (self.dataframe[&#34;lng&#34;] &lt;= self._lng_max))
+        # If longitude min is negative and longitude max is positive
+        elif self._lng_min &lt;= 0 and self._lng_max &gt;= 0:
+            # The condition considers the 0 value between the longitude values
+            lng_condition = ((self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= 0)) | (
+                    (self.dataframe[&#34;lng&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lng&#34;] &lt; self._lng_max))
+
+        # Select the rows that verifies the latitude and longitude condition
+        grid_city = self.dataframe.loc[lat_condition &amp; lng_condition &amp;
+                                       (self.dataframe[&#34;city&#34;] != self._city_step) &amp;
+                                       (self.dataframe[&#34;visited_city&#34;] == 0)]
+        # print(grid_city)
+        # It returns the dataframe that contains the cities that are inside the grid
+        return grid_city
+
+    def check_grid_city(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;It generates a grid, it selects the cities in the grid and:
+        if it contains at least n_min cities, it returns the dataframe
+        if it doesn&#39;t contain at least n_min cities, it rises the grid size and recalculate the grid
+        and reselect cities inside the new grid
+
+        Returns
+        -------
+        pd.DataFrame
+            Dataframe that contains the cities that are inside the grid
+        &#34;&#34;&#34;
+        # Initialise variables
+        n_row = 0
+        grid_city = pd.DataFrame()
+
+        while n_row &lt; self.n_min:
+            # Generate the grid used to search for the nearest cities
+            self.generate_grid()
+            # Select the cities that are inside the grid
+            grid_city = self.query()
+            # Get the number of the rows of the dataframe
+            n_row = grid_city.shape[0]
+            # It rises the grid size
+            self.x_size *= self.rise_factor
+            self.y_size *= self.rise_factor
+            # Check if the current city is close to the starting city
+            # and the latter is in the grid
+            self._is_near_destination = self._check_is_near_destination(grid_city)
+
+        # It assigns the default grid size
+        self.x_size = self._x_size_default
+        self.y_size = self._y_size_default
+        # It returns the dataframe that contains the cities that are inside the grid
+        return grid_city
+
+    def _check_is_near_destination(self, grid_city: pd.DataFrame) -&gt; bool:
+        &#34;&#34;&#34;It checks:
+         if in the grid there is the starting city
+         if the longitude of the current city is close to the longitude of the starting city
+
+        Returns
+        -------
+        bool
+            It is true if the grid contains the starting city and
+            the longitude of the current city and the starting city are close.
+            It is false otherwise.
+        &#34;&#34;&#34;
+        # Check if the coordinates of the starting city are inside the grid
+        is_destination_in_grid = len(
+            grid_city.loc[(grid_city[&#34;lng&#34;] == self._coord_start[0]) &amp; (grid_city[&#34;lat&#34;] == self._coord_start[1])]) == 1
+        # Check if the longitude of the current city is close to the longitude of the starting city
+        is_longitude_close = abs(self._coord_start[0] - self._coord_step[0]) &lt;= (self.x_size * self.rise_factor)
+        # Check if both of the previous conditions are true
+        return is_destination_in_grid and is_longitude_close
+
+    def weight(self, grid_city: pd.DataFrame) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;It generates a grid, it selects the cities in the grid and:
+        if it contains at least n_min cities, it returns the dataframe
+        if it doesn&#39;t contain at least n_min cities, it rises the grid size and it calls itself
+
+        Parameters
+        ----------
+        grid_city : pd.DataFrame
+            Dataframe of cities that are inside the grid
+
+        Returns
+        -------
+        pd.DataFrame
+            Dataframe that contains the nearest cities with assigned weights
+        &#34;&#34;&#34;
+        # Calculate the distance between the current coordinates and the coordinates of the cities in the grid
+        grid_city[&#34;distance&#34;] = grid_city.apply(self.calculate_distance, axis=1, point_city_step=self._coord_step)
+        # Sort the cities by distance
+        grid_city.sort_values(by=[&#34;distance&#34;], inplace=True)
+        # Get the first n_min rows (the nearest cities)
+        grid_city = grid_city[:self.n_min]
+        # Add a weight given by the distance,
+        # the first nearest city has weight 2, the second 4 and the third 8
+        grid_city[&#34;weight&#34;] = [2 ** x for x in range(1, self.n_min + 1)]
+        # Add a weight given by the population of the city and the different country
+        grid_city[&#34;weight&#34;] += grid_city.apply(self.calculate_weight, axis=1, country_step=self._country_step)
+        # Returns the dataframe with the nearest cities and the assigned weight
+        return grid_city
+
+    @staticmethod
+    def calculate_weight(row: pd.Series, country_step: str) -&gt; int:
+        &#34;&#34;&#34;It sums the weight of the population and of the country
+
+        Parameters
+        ----------
+        row: pd.Series
+            Row of the dataframe of cities that are inside the grid
+        country_step: str
+            Country of the current city
+
+        Returns
+        -------
+        int
+            Weight that sums the weights if the population is big and if the country is different
+        &#34;&#34;&#34;
+        # It assigns 2 if the population of the city is greater than 200000, 0 otherwise
+        pop_weight = 2 if row[&#34;flg_pop&#34;] == 1 else 0
+        # It assigns 2 if the country is different from the current country, 0 otherwise
+        country_weight = 2 if row[&#34;iso2&#34;] != country_step else 0
+        # It returns the sum of the previous weights
+        return pop_weight + country_weight
+
+    @staticmethod
+    def calculate_distance(row: pd.Series, point_city_step: Tuple[float, float]) -&gt; float:
+        &#34;&#34;&#34;It calculates the euclidean distance between the coordinates of a city and the current city
+
+        Parameters
+        ----------
+        row: pd.Series
+            Row of the dataframe of cities that are inside the grid
+        point_city_step: Tuple[float, float]
+            Coordinates of the current city
+
+        Returns
+        -------
+        float
+            Distance between the coordinates of a city and the current city
+        &#34;&#34;&#34;
+        return euclidean_distances([list(point_city_step)], [[row[&#34;lng&#34;], row[&#34;lat&#34;]]])[0][0]
+
+    def stop_condition(self, grid_city: pd.DataFrame) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;It checks if the coordinates of the start city are inside the grid:
+        if it is true, it returns a dataframe with only the row of the starting city
+        if it is false, it does nothing and it returns the given dataframe
+
+        Parameters
+        ----------
+        grid_city : pd.DataFrame
+            Dataframe of cities that are inside the grid
+
+        Returns
+        -------
+        pd.DataFrame
+            Dataframe that contains the nearest cities or only the start city
+        &#34;&#34;&#34;
+        # Select the row that contains the starting coordinates from the grid dataframe
+        temp_grid_city = grid_city.loc[
+            (grid_city[&#34;lng&#34;] == self._coord_start[0]) &amp;
+            (grid_city[&#34;lat&#34;] == self._coord_start[1])]
+        # If the starting coordinates are inside the grid dataframe
+        if len(temp_grid_city) == 1:
+            # It assigns the row of the starting city to the grid city
+            grid_city = temp_grid_city
+        # It returns the grid city
+        return grid_city
+
+    def step(self, grid_city: pd.DataFrame):
+        &#34;&#34;&#34;It gets the smallest weight from the nearest cities and it updates:
+        the current city values, the hours, the number of steps, the visited city column of the dataframe,
+        it adds the selected city to the list of all visited cities
+
+        Parameters
+        ----------
+        grid_city : pd.DataFrame
+            Dataframe of cities that are inside the grid
+        &#34;&#34;&#34;
+        # Sort nearest cities by the weight and distance
+        # For the same weight, the city with the shortest distance is taken
+        grid_city.sort_values(by=[&#34;weight&#34;, &#34;distance&#34;], ascending=[True, False], inplace=True)
+        # Select the first row
+        step = grid_city.iloc[0]
+        # Update the current city values: coordinates, city and country
+        self._coord_step = tuple(step[[&#34;lng&#34;, &#34;lat&#34;]])
+        self._city_step = step[&#34;city&#34;]
+        self._country_step = step[&#34;iso2&#34;]
+        # Increase the hours of the journey
+        self.hours += step[&#34;weight&#34;]
+        # Increase the number of steps
+        self.n_steps += 1
+        # Mark the visited city
+        self.dataframe[&#34;visited_city&#34;].iloc[step.name] = 1
+        # Add the nearest city to the list of all visited cities
+        self.map_city = self.map_city.append(step[[&#34;city&#34;, &#34;lat&#34;, &#34;lng&#34;, &#34;country&#34;, &#34;iso2&#34;]])
+        # print(self.coord_step, self.city_step, self.country_step, self.hours)
+
+    def travel(self, is_intermediate_plot: bool = True, n_intermediate_step: int = 100, is_clear_output: bool = False):
+        &#34;&#34;&#34;It calculates the cities to visit until it returns to the starting city.
+        It plots the journey every n_intermediate_step, if is_intermediate_plot is true
+
+        Parameters
+        ----------
+        is_intermediate_plot: bool
+            If it is true, it plots the intermediate journey
+        n_intermediate_step: int
+            Number of the step the plot is printed
+        is_clear_output: bool
+            If it is true, the previous plot is cleared
+        &#34;&#34;&#34;
+        # Get the start time
+        start = time.time()
+        # Plot the world, if the variable is true
+        if is_intermediate_plot:
+            self.plot_world(is_clear_output)
+        # While the current city is different from the starting city or it is the first step
+        while (self.city_start != self._city_step) or (self.country_start != self._country_step) or (self.n_steps == 0):
+            # Generate a grid that contains at least n_min nearest cities
+            grid_city = self.check_grid_city()
+            # Calculate the weight of the n_min nearest cities
+            grid_city_weight = self.weight(grid_city)
+            # Check if the starting city is in the grid
+            grid_city_weight = self.stop_condition(grid_city_weight)
+            # Updates the current city, the number of hours of the journey and so on
+            self.step(grid_city_weight)
+            # Plot the intermediate journey, if the variable is true, every n_intermediate_step
+            if is_intermediate_plot and self.n_steps % n_intermediate_step == 0:
+                self.plot_world(is_clear_output)
+        # Plot the world with the completed journey, if the variable is true
+        if is_intermediate_plot:
+            self.plot_world(is_clear_output)
+        print(f&#34;Completed the journey starting from {self.city_start} ({self.country_start})&#34;,
+              f&#34;in {self.hours / 24:.2f} days ({self.hours} hours) after visited {self.n_steps} cities.&#34;)
+        # Get and print the elapsed time
+        elapsed = time.time() - start
+        print(f&#34;Done in {elapsed:.2f} seconds.&#34;)
+
+    def plot_world(self, is_clear_output: bool = False):
+        &#34;&#34;&#34;It plots the world with the journey path
+
+        Parameters
+        ----------
+        is_clear_output: bool
+            If it is true, the previous plot is cleared
+        &#34;&#34;&#34;
+        # Clear the previous plot, if it is true
+        if is_clear_output:
+            clear_output(wait=True)
+        # Select the visited cities
+        visited_df = self.dataframe.loc[(self.dataframe[&#34;visited_city&#34;] == 1)]
+        # Select the remaining cities
+        city_df = self.dataframe.loc[(self.dataframe[&#34;visited_city&#34;] == 0)]
+        # Prepare the plot figure and a subplot
+        fig = plt.figure(figsize=(100, 50))
+        ax = fig.add_subplot(111)
+        # Add a scatter plot of the not visited cities
+        ax.scatter(city_df.lng, city_df.lat, color=&#34;green&#34;, marker=&#34;o&#34;, alpha=0.5, s=30)
+        # Add a scatter plot of the visited cities
+        ax.scatter(visited_df.lng, visited_df.lat, color=&#34;magenta&#34;, marker=&#34;o&#34;, alpha=0.5, s=200)
+        # Add the point of starting coordinates
+        ax.scatter(self._coord_start[0], self._coord_start[1], color=&#34;red&#34;, marker=&#34;+&#34;, s=100)
+        # Assign labels
+        plt.xlabel(&#34;Longitude&#34;, fontsize=75)
+        plt.ylabel(&#34;Latitude&#34;, fontsize=75)
+        # Set axes limits
+        plt.xlim([-180, 180])
+        plt.ylim([-90, 90])
+        # Add the grid
+        ax.grid()
+
+        # If the latitude and longitude values exists
+        if (self._lng_min is not None and self._lng_max is not None and
+                self._lat_min is not None and self._lat_max is not None):
+            # Prepare the rectangles according to the coordinates max and min of the grid
+            rectangle_values = self._prepare_rectangle_values()
+            for origin_point, width, height in rectangle_values:
+                # Add the rectangle of the grid
+                ax.add_patch(
+                    patches.Rectangle(
+                        xy=origin_point,  # Point of origin
+                        width=width,
+                        height=height,
+                        linewidth=3,
+                        color=&#34;blue&#34;,
+                        fill=False
+                    )
+                )
+        # Plot the figure
+        plt.show()
+
+    def _prepare_rectangle_values(self) -&gt; List[Tuple[Tuple[float, float], float, float]]:
+        &#34;&#34;&#34;Calculate the point of the origin, the width and the height of the rectangle,
+        according to the coordinates max and min of the grid
+
+        Returns
+        -------
+        List[Tuple[Tuple[float, float], float, float]]
+            A list of tuples of point of the origin, the width and the height of the rectangle
+        &#34;&#34;&#34;
+        rectangle_values: List[Tuple[Tuple[float, float], float, float]] = []  # point of origin, width, height
+        # If longitude min and max are both positive or negative,
+        # or the longitude min is negative and the longitude max is positive
+        if (self._lng_min &gt;= 0 and self._lng_max &gt;= 0) or \
+                (self._lng_min &lt;= 0 and self._lng_max &lt;= 0) or \
+                (self._lng_min &lt;= 0 and self._lng_max &gt;= 0):
+            # Prepare only one rectangle
+            rectangle_values = [
+                ((self._lng_min, self._lat_min),
+                 self._lng_max - self._lng_min,
+                 self._lat_max - self._lat_min)]
+        else:
+            # Otherwise, there are 2 rectangles, one on the far right.
+            # the other on the far left
+            rectangle_values = [
+                ((self._lng_min, self._lat_min),
+                 180 - self._lng_min,
+                 self._lat_max - self._lat_min),
+                ((-180, self._lat_min),
+                 self._lng_max + 180,
+                 self._lat_max - self._lat_min)
+            ]
+        # Return rectangle values
+        return rectangle_values</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld"><code class="flex name class">
+<span>class <span class="ident">AroundTheWorld</span></span>
+<span>(</span><span>dataframe: pandas.core.frame.DataFrame, city_start: str, country_start: str, n_min: int = 3, x_size: float = 0.3, y_size: float = 0.15, rise_factor: float = 2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Given a starting city, it travels around the world returning to the city of departure.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>dataframe</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataset of all cities</dd>
+<dt><strong><code>city_start</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the starting city</dd>
+<dt><strong><code>country_start</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the starting country</dd>
+<dt><strong><code>n_min</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of the closest cities to which it is possible to travel</dd>
+<dt><strong><code>x_size</code></strong> :&ensp;<code>float</code></dt>
+<dd>Size of the longitudinal side of the grid used to search for the nearest cities</dd>
+<dt><strong><code>y_size</code></strong> :&ensp;<code>float</code></dt>
+<dd>Size of the latitudinal side of the grid used to search for the nearest cities</dd>
+<dt><strong><code>rise_factor</code></strong> :&ensp;<code>float</code></dt>
+<dd>Multiplication factor to increase the grid used to search for the nearest cities</dd>
+<dt><strong><code>map_city</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataset of all cities of the journey route</dd>
+<dt><strong><code>hours</code></strong> :&ensp;<code>int</code></dt>
+<dd>Total number of journey hours</dd>
+<dt><strong><code>n_steps</code></strong> :&ensp;<code>int</code></dt>
+<dd>Total number of steps of the journey</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AroundTheWorld(object):
+    &#34;&#34;&#34;
+    Given a starting city, it travels around the world returning to the city of departure.
+
+    Attributes
+    ----------
+    dataframe : pd.DataFrame
+        Dataset of all cities
+    city_start : str
+        Name of the starting city
+    country_start : str
+        Name of the starting country
+    n_min : int
+        Number of the closest cities to which it is possible to travel
+    x_size : float
+        Size of the longitudinal side of the grid used to search for the nearest cities
+    y_size : float
+        Size of the latitudinal side of the grid used to search for the nearest cities
+    rise_factor : float
+        Multiplication factor to increase the grid used to search for the nearest cities
+
+    map_city : pd.DataFrame
+        Dataset of all cities of the journey route
+    hours : int
+        Total number of journey hours
+    n_steps : int
+        Total number of steps of the journey
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 dataframe: pd.DataFrame,
+                 city_start: str,
+                 country_start: str,
+                 n_min: int = 3,
+                 x_size: float = 0.3,
+                 y_size: float = 0.15,
+                 rise_factor: float = 2):
+        # If the dataframe is not a pandas.Dataframe it rise a TypeError
+        if not isinstance(dataframe, pd.DataFrame):
+            raise TypeError(f&#34;The given dataframe must to be a \&#34;pandas.Dataframe\&#34; type, not \&#34;{type(dataframe)}\&#34;&#34;)
+        self.dataframe: pd.DataFrame = self._initialise_dataframe(dataframe)
+        # If the city start is not a string it rise a TypeError
+        if not isinstance(city_start, str):
+            raise TypeError(f&#34;The given city_start must to be a \&#34;str\&#34; type, not \&#34;{type(city_start)}\&#34;&#34;)
+        self.city_start: str = city_start
+        # If the country start is not a string it rise a TypeError
+        if not isinstance(country_start, str):
+            raise TypeError(f&#34;The given country_start must to be a \&#34;str\&#34; type, not \&#34;{type(country_start)}\&#34;&#34;)
+        self.country_start: str = country_start
+        # If the n_min is not a integer it rise a TypeError
+        if not isinstance(n_min, int):
+            raise TypeError(f&#34;The given n_min must to be a \&#34;int\&#34; type, not \&#34;{type(n_min)}\&#34;&#34;)
+        self.n_min: int = n_min
+        # If the x_size is not a integer or a float it rise a TypeError
+        if not isinstance(x_size, (int, float)):
+            raise TypeError(f&#34;The given x_size must to be a \&#34;int\&#34; or \&#34;float\&#34; type, not \&#34;{type(x_size)}\&#34;&#34;)
+        self.x_size: float = float(x_size)
+        # If the y_size is not a integer or a float it rise a TypeError
+        if not isinstance(y_size, (int, float)):
+            raise TypeError(f&#34;The given y_size must to be a \&#34;int\&#34; or \&#34;float\&#34; type, not \&#34;{type(y_size)}\&#34;&#34;)
+        self.y_size: float = float(y_size)
+        # If the rise_factor is not a integer or a float it rise a TypeError
+        if not isinstance(rise_factor, (int, float)):
+            raise TypeError(f&#34;The given y_size must to be a \&#34;int\&#34; or \&#34;float\&#34; type, not \&#34;{type(rise_factor)}\&#34;&#34;)
+        self.rise_factor: float = float(rise_factor)
+
+        self.map_city: pd.DataFrame = pd.DataFrame([], columns=[&#34;city&#34;, &#34;lat&#34;, &#34;lng&#34;, &#34;country&#34;, &#34;iso2&#34;])
+        self.hours: int = 0
+        self.n_steps: int = 0
+        &#34;&#34;&#34;
+        _x_size_default : float
+            Default size of the longitudinal side of the grid used to search for the nearest cities
+        _y_size_default : float
+            Default size of the latitudinal side of the grid used to search for the nearest cities
+        &#34;&#34;&#34;
+        self._x_size_default: float = self.x_size
+        self._y_size_default: float = self.y_size
+        &#34;&#34;&#34;
+        _coord_start : Tuple[float, float]
+            Coordinates of the starting city declared as (longitude, latitude)
+        &#34;&#34;&#34;
+        self._coord_start: Tuple[float, float] = None  # (lng, lat)
+        &#34;&#34;&#34;
+        _city_step : str
+            Name of the current city of the journey route
+        country_start : str
+            Name of the current country of the journey route
+        _coord_step : Tuple[float, float]
+            Coordinates of the current city of the journey route declared as (longitude, latitude)
+        &#34;&#34;&#34;
+        self._city_step: str = self.city_start
+        self._country_step: str = self.country_start
+        self._coord_step: Tuple[float, float] = None  # (lng, lat)
+        &#34;&#34;&#34;
+        _lat_max : float
+            Maximum latitude used as a reference
+        _lat_min : float
+            Minimum latitude used as a reference
+        _lng_max : float
+            Maximum longitude used as a reference
+        _lng_min : float
+            Minimum longitude used as a reference
+        &#34;&#34;&#34;
+        self._lat_max: float = None
+        self._lat_min: float = None
+        self._lng_min: float = None
+        self._lng_max: float = None
+        &#34;&#34;&#34;
+        _is_near_destination : bool
+            Minimum longitude used as a reference
+        &#34;&#34;&#34;
+        self._is_near_destination: bool = False
+        # Set coordinates of the starting city, and take it as current coordinates
+        self._set_coordinates()
+
+    @staticmethod
+    def _initialise_dataframe(dataframe: pd.DataFrame) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Given a dataframe with all cities, it selects interested columns,
+        it adds the flag population and visited city columns.
+
+        Parameters
+        ----------
+        dataframe : pd.DataFrame
+            Dataset of all cities
+
+        Returns
+        -------
+        pd.DataFrame
+            The initialised dataframe
+        &#34;&#34;&#34;
+        # Prepare a list with the interested column names
+        columns = [&#34;city&#34;, &#34;lat&#34;, &#34;lng&#34;, &#34;country&#34;, &#34;iso2&#34;, &#34;population&#34;]
+        # Deep copy of the dataframe
+        df = dataframe[columns].copy()
+        # Add the flag for the population, in the dataframe.
+        # It is 1 if a city has a population is greater than 200000, 0 otherwise
+        df[&#34;flg_pop&#34;] = df.population.apply(lambda x: 1 if not (pd.isna(x)) and x &gt; 200000 else 0)
+        # Initialise the visited city column to 0
+        df[&#34;visited_city&#34;] = 0
+        return df
+
+    def _set_coordinates(self):
+        &#34;&#34;&#34;Set the longitude and the latitude of the starting city, and take it as current coordinates
+        &#34;&#34;&#34;
+        # Get the row that contains the starting city and country
+        temp_dataframe = self.dataframe.loc[
+            (self.dataframe[&#34;city&#34;] == self.city_start) &amp;
+            (self.dataframe[&#34;iso2&#34;] == self.country_start)]
+        # Select the longitude and the latitude of the previous dataframe,
+        # get the first row, add values in a tuple and store it as coordinates start
+        self._coord_start = tuple(temp_dataframe[[&#34;lng&#34;, &#34;lat&#34;]].iloc[0])
+        # Store the previous coordinates as coordinates step too
+        self._coord_step = self._coord_start
+
+    def generate_grid(self):
+        &#34;&#34;&#34;Generate the grid used to search for the nearest cities
+        as range of maximum and minimum latitudes and longitudes.
+        &#34;&#34;&#34;
+        # If the latitude of the current city is greater than the latitude of the starting city
+        if self._coord_step[1] &gt;= self._coord_start[1]:
+            # As latitude max is used the latitude of the current city plus half of the size of y_size
+            self._lat_max = self._coord_step[1] + self.y_size / 2
+            # As latitude min is used the latitude of the starting city minus half of the size of y_size
+            self._lat_min = self._coord_start[1] - self.y_size / 2
+        else:
+            # As latitude max is used the latitude of the starting city plus half of the size of y_size
+            self._lat_max = self._coord_start[1] + self.y_size / 2
+            # As latitude min is used the latitude of the current city minus half of the size of y_size
+            self._lat_min = self._coord_step[1] - self.y_size / 2
+
+        # The longitude min is the longitude of the current city
+        self._lng_min = self._coord_step[0]
+
+        # If it is near the destination
+        if self._is_near_destination:
+            # The longitude max is slightly higher than the starting longitude
+            self._lng_max = self._coord_start[0] + 0.005
+        else:
+            # The longitude max is the longitude of the current city plus x_size
+            self._lng_max = self._coord_step[0] + self.x_size
+
+        # Fix the latitude values of the grid
+        if self._lat_max &gt;= 90:
+            self._lat_max -= 180
+        if self._lat_min &lt;= -90:
+            self._lat_min += 180
+        # Fix the longitude values of the grid
+        if self._lng_max &gt;= 180:
+            self._lng_max -= 360
+        if self._lng_min &lt;= -180:
+            self._lng_min += 360
+        # print(self.lat_max, self.lat_min, self.lng_min, self.lng_max)
+
+    def query(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Select the cities that are located within the grid,
+        shaped by the range of maximum and minimum latitudes and longitudes.
+
+        Returns
+        -------
+        pd.DataFrame
+            Dataframe that contains the cities that are inside the grid
+        &#34;&#34;&#34;
+        # Initialise the conditions for the latitude and the longitude
+        lat_condition = False
+        lng_condition = False
+
+        # If both latitude values of the grid are positive or negative
+        if (self._lat_min &gt;= 0 and self._lat_max &gt;= 0) or (self._lat_min &lt;= 0 and self._lat_max &lt;= 0):
+            lat_condition = (self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= self._lat_max)
+        # If latitude min is positive and latitude max is negative
+        elif self._lat_min &gt;= 0 and self._lat_max &lt;= 0:
+            # The condition considers the highest and the lowest value of the latitude values
+            lat_condition = ((self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= 90)) | (
+                    (self.dataframe[&#34;lat&#34;] &gt;= -90) &amp; (self.dataframe[&#34;lat&#34;] &lt;= self._lat_max))
+        # If latitude min is negative and latitude max is positive
+        elif self._lat_min &lt;= 0 and self._lat_max &gt;= 0:
+            # The condition considers the 0 value between the latitude values
+            lat_condition = ((self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= 0)) | (
+                    (self.dataframe[&#34;lat&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lat&#34;] &lt; self._lat_max))
+
+        # If both longitude values of the grid are positive or negative
+        if (self._lng_min &gt;= 0 and self._lng_max &gt;= 0) or (self._lng_min &lt;= 0 and self._lng_max &lt;= 0):
+            lng_condition = (self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= self._lng_max)
+        # If longitude min is positive and longitude max is negative
+        elif self._lng_min &gt;= 0 and self._lng_max &lt;= 0:
+            # The condition considers the highest and the lowest value of the longitude values
+            lng_condition = ((self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= 180)) | (
+                    (self.dataframe[&#34;lng&#34;] &gt;= -180) &amp; (self.dataframe[&#34;lng&#34;] &lt;= self._lng_max))
+        # If longitude min is negative and longitude max is positive
+        elif self._lng_min &lt;= 0 and self._lng_max &gt;= 0:
+            # The condition considers the 0 value between the longitude values
+            lng_condition = ((self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= 0)) | (
+                    (self.dataframe[&#34;lng&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lng&#34;] &lt; self._lng_max))
+
+        # Select the rows that verifies the latitude and longitude condition
+        grid_city = self.dataframe.loc[lat_condition &amp; lng_condition &amp;
+                                       (self.dataframe[&#34;city&#34;] != self._city_step) &amp;
+                                       (self.dataframe[&#34;visited_city&#34;] == 0)]
+        # print(grid_city)
+        # It returns the dataframe that contains the cities that are inside the grid
+        return grid_city
+
+    def check_grid_city(self) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;It generates a grid, it selects the cities in the grid and:
+        if it contains at least n_min cities, it returns the dataframe
+        if it doesn&#39;t contain at least n_min cities, it rises the grid size and recalculate the grid
+        and reselect cities inside the new grid
+
+        Returns
+        -------
+        pd.DataFrame
+            Dataframe that contains the cities that are inside the grid
+        &#34;&#34;&#34;
+        # Initialise variables
+        n_row = 0
+        grid_city = pd.DataFrame()
+
+        while n_row &lt; self.n_min:
+            # Generate the grid used to search for the nearest cities
+            self.generate_grid()
+            # Select the cities that are inside the grid
+            grid_city = self.query()
+            # Get the number of the rows of the dataframe
+            n_row = grid_city.shape[0]
+            # It rises the grid size
+            self.x_size *= self.rise_factor
+            self.y_size *= self.rise_factor
+            # Check if the current city is close to the starting city
+            # and the latter is in the grid
+            self._is_near_destination = self._check_is_near_destination(grid_city)
+
+        # It assigns the default grid size
+        self.x_size = self._x_size_default
+        self.y_size = self._y_size_default
+        # It returns the dataframe that contains the cities that are inside the grid
+        return grid_city
+
+    def _check_is_near_destination(self, grid_city: pd.DataFrame) -&gt; bool:
+        &#34;&#34;&#34;It checks:
+         if in the grid there is the starting city
+         if the longitude of the current city is close to the longitude of the starting city
+
+        Returns
+        -------
+        bool
+            It is true if the grid contains the starting city and
+            the longitude of the current city and the starting city are close.
+            It is false otherwise.
+        &#34;&#34;&#34;
+        # Check if the coordinates of the starting city are inside the grid
+        is_destination_in_grid = len(
+            grid_city.loc[(grid_city[&#34;lng&#34;] == self._coord_start[0]) &amp; (grid_city[&#34;lat&#34;] == self._coord_start[1])]) == 1
+        # Check if the longitude of the current city is close to the longitude of the starting city
+        is_longitude_close = abs(self._coord_start[0] - self._coord_step[0]) &lt;= (self.x_size * self.rise_factor)
+        # Check if both of the previous conditions are true
+        return is_destination_in_grid and is_longitude_close
+
+    def weight(self, grid_city: pd.DataFrame) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;It generates a grid, it selects the cities in the grid and:
+        if it contains at least n_min cities, it returns the dataframe
+        if it doesn&#39;t contain at least n_min cities, it rises the grid size and it calls itself
+
+        Parameters
+        ----------
+        grid_city : pd.DataFrame
+            Dataframe of cities that are inside the grid
+
+        Returns
+        -------
+        pd.DataFrame
+            Dataframe that contains the nearest cities with assigned weights
+        &#34;&#34;&#34;
+        # Calculate the distance between the current coordinates and the coordinates of the cities in the grid
+        grid_city[&#34;distance&#34;] = grid_city.apply(self.calculate_distance, axis=1, point_city_step=self._coord_step)
+        # Sort the cities by distance
+        grid_city.sort_values(by=[&#34;distance&#34;], inplace=True)
+        # Get the first n_min rows (the nearest cities)
+        grid_city = grid_city[:self.n_min]
+        # Add a weight given by the distance,
+        # the first nearest city has weight 2, the second 4 and the third 8
+        grid_city[&#34;weight&#34;] = [2 ** x for x in range(1, self.n_min + 1)]
+        # Add a weight given by the population of the city and the different country
+        grid_city[&#34;weight&#34;] += grid_city.apply(self.calculate_weight, axis=1, country_step=self._country_step)
+        # Returns the dataframe with the nearest cities and the assigned weight
+        return grid_city
+
+    @staticmethod
+    def calculate_weight(row: pd.Series, country_step: str) -&gt; int:
+        &#34;&#34;&#34;It sums the weight of the population and of the country
+
+        Parameters
+        ----------
+        row: pd.Series
+            Row of the dataframe of cities that are inside the grid
+        country_step: str
+            Country of the current city
+
+        Returns
+        -------
+        int
+            Weight that sums the weights if the population is big and if the country is different
+        &#34;&#34;&#34;
+        # It assigns 2 if the population of the city is greater than 200000, 0 otherwise
+        pop_weight = 2 if row[&#34;flg_pop&#34;] == 1 else 0
+        # It assigns 2 if the country is different from the current country, 0 otherwise
+        country_weight = 2 if row[&#34;iso2&#34;] != country_step else 0
+        # It returns the sum of the previous weights
+        return pop_weight + country_weight
+
+    @staticmethod
+    def calculate_distance(row: pd.Series, point_city_step: Tuple[float, float]) -&gt; float:
+        &#34;&#34;&#34;It calculates the euclidean distance between the coordinates of a city and the current city
+
+        Parameters
+        ----------
+        row: pd.Series
+            Row of the dataframe of cities that are inside the grid
+        point_city_step: Tuple[float, float]
+            Coordinates of the current city
+
+        Returns
+        -------
+        float
+            Distance between the coordinates of a city and the current city
+        &#34;&#34;&#34;
+        return euclidean_distances([list(point_city_step)], [[row[&#34;lng&#34;], row[&#34;lat&#34;]]])[0][0]
+
+    def stop_condition(self, grid_city: pd.DataFrame) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;It checks if the coordinates of the start city are inside the grid:
+        if it is true, it returns a dataframe with only the row of the starting city
+        if it is false, it does nothing and it returns the given dataframe
+
+        Parameters
+        ----------
+        grid_city : pd.DataFrame
+            Dataframe of cities that are inside the grid
+
+        Returns
+        -------
+        pd.DataFrame
+            Dataframe that contains the nearest cities or only the start city
+        &#34;&#34;&#34;
+        # Select the row that contains the starting coordinates from the grid dataframe
+        temp_grid_city = grid_city.loc[
+            (grid_city[&#34;lng&#34;] == self._coord_start[0]) &amp;
+            (grid_city[&#34;lat&#34;] == self._coord_start[1])]
+        # If the starting coordinates are inside the grid dataframe
+        if len(temp_grid_city) == 1:
+            # It assigns the row of the starting city to the grid city
+            grid_city = temp_grid_city
+        # It returns the grid city
+        return grid_city
+
+    def step(self, grid_city: pd.DataFrame):
+        &#34;&#34;&#34;It gets the smallest weight from the nearest cities and it updates:
+        the current city values, the hours, the number of steps, the visited city column of the dataframe,
+        it adds the selected city to the list of all visited cities
+
+        Parameters
+        ----------
+        grid_city : pd.DataFrame
+            Dataframe of cities that are inside the grid
+        &#34;&#34;&#34;
+        # Sort nearest cities by the weight and distance
+        # For the same weight, the city with the shortest distance is taken
+        grid_city.sort_values(by=[&#34;weight&#34;, &#34;distance&#34;], ascending=[True, False], inplace=True)
+        # Select the first row
+        step = grid_city.iloc[0]
+        # Update the current city values: coordinates, city and country
+        self._coord_step = tuple(step[[&#34;lng&#34;, &#34;lat&#34;]])
+        self._city_step = step[&#34;city&#34;]
+        self._country_step = step[&#34;iso2&#34;]
+        # Increase the hours of the journey
+        self.hours += step[&#34;weight&#34;]
+        # Increase the number of steps
+        self.n_steps += 1
+        # Mark the visited city
+        self.dataframe[&#34;visited_city&#34;].iloc[step.name] = 1
+        # Add the nearest city to the list of all visited cities
+        self.map_city = self.map_city.append(step[[&#34;city&#34;, &#34;lat&#34;, &#34;lng&#34;, &#34;country&#34;, &#34;iso2&#34;]])
+        # print(self.coord_step, self.city_step, self.country_step, self.hours)
+
+    def travel(self, is_intermediate_plot: bool = True, n_intermediate_step: int = 100, is_clear_output: bool = False):
+        &#34;&#34;&#34;It calculates the cities to visit until it returns to the starting city.
+        It plots the journey every n_intermediate_step, if is_intermediate_plot is true
+
+        Parameters
+        ----------
+        is_intermediate_plot: bool
+            If it is true, it plots the intermediate journey
+        n_intermediate_step: int
+            Number of the step the plot is printed
+        is_clear_output: bool
+            If it is true, the previous plot is cleared
+        &#34;&#34;&#34;
+        # Get the start time
+        start = time.time()
+        # Plot the world, if the variable is true
+        if is_intermediate_plot:
+            self.plot_world(is_clear_output)
+        # While the current city is different from the starting city or it is the first step
+        while (self.city_start != self._city_step) or (self.country_start != self._country_step) or (self.n_steps == 0):
+            # Generate a grid that contains at least n_min nearest cities
+            grid_city = self.check_grid_city()
+            # Calculate the weight of the n_min nearest cities
+            grid_city_weight = self.weight(grid_city)
+            # Check if the starting city is in the grid
+            grid_city_weight = self.stop_condition(grid_city_weight)
+            # Updates the current city, the number of hours of the journey and so on
+            self.step(grid_city_weight)
+            # Plot the intermediate journey, if the variable is true, every n_intermediate_step
+            if is_intermediate_plot and self.n_steps % n_intermediate_step == 0:
+                self.plot_world(is_clear_output)
+        # Plot the world with the completed journey, if the variable is true
+        if is_intermediate_plot:
+            self.plot_world(is_clear_output)
+        print(f&#34;Completed the journey starting from {self.city_start} ({self.country_start})&#34;,
+              f&#34;in {self.hours / 24:.2f} days ({self.hours} hours) after visited {self.n_steps} cities.&#34;)
+        # Get and print the elapsed time
+        elapsed = time.time() - start
+        print(f&#34;Done in {elapsed:.2f} seconds.&#34;)
+
+    def plot_world(self, is_clear_output: bool = False):
+        &#34;&#34;&#34;It plots the world with the journey path
+
+        Parameters
+        ----------
+        is_clear_output: bool
+            If it is true, the previous plot is cleared
+        &#34;&#34;&#34;
+        # Clear the previous plot, if it is true
+        if is_clear_output:
+            clear_output(wait=True)
+        # Select the visited cities
+        visited_df = self.dataframe.loc[(self.dataframe[&#34;visited_city&#34;] == 1)]
+        # Select the remaining cities
+        city_df = self.dataframe.loc[(self.dataframe[&#34;visited_city&#34;] == 0)]
+        # Prepare the plot figure and a subplot
+        fig = plt.figure(figsize=(100, 50))
+        ax = fig.add_subplot(111)
+        # Add a scatter plot of the not visited cities
+        ax.scatter(city_df.lng, city_df.lat, color=&#34;green&#34;, marker=&#34;o&#34;, alpha=0.5, s=30)
+        # Add a scatter plot of the visited cities
+        ax.scatter(visited_df.lng, visited_df.lat, color=&#34;magenta&#34;, marker=&#34;o&#34;, alpha=0.5, s=200)
+        # Add the point of starting coordinates
+        ax.scatter(self._coord_start[0], self._coord_start[1], color=&#34;red&#34;, marker=&#34;+&#34;, s=100)
+        # Assign labels
+        plt.xlabel(&#34;Longitude&#34;, fontsize=75)
+        plt.ylabel(&#34;Latitude&#34;, fontsize=75)
+        # Set axes limits
+        plt.xlim([-180, 180])
+        plt.ylim([-90, 90])
+        # Add the grid
+        ax.grid()
+
+        # If the latitude and longitude values exists
+        if (self._lng_min is not None and self._lng_max is not None and
+                self._lat_min is not None and self._lat_max is not None):
+            # Prepare the rectangles according to the coordinates max and min of the grid
+            rectangle_values = self._prepare_rectangle_values()
+            for origin_point, width, height in rectangle_values:
+                # Add the rectangle of the grid
+                ax.add_patch(
+                    patches.Rectangle(
+                        xy=origin_point,  # Point of origin
+                        width=width,
+                        height=height,
+                        linewidth=3,
+                        color=&#34;blue&#34;,
+                        fill=False
+                    )
+                )
+        # Plot the figure
+        plt.show()
+
+    def _prepare_rectangle_values(self) -&gt; List[Tuple[Tuple[float, float], float, float]]:
+        &#34;&#34;&#34;Calculate the point of the origin, the width and the height of the rectangle,
+        according to the coordinates max and min of the grid
+
+        Returns
+        -------
+        List[Tuple[Tuple[float, float], float, float]]
+            A list of tuples of point of the origin, the width and the height of the rectangle
+        &#34;&#34;&#34;
+        rectangle_values: List[Tuple[Tuple[float, float], float, float]] = []  # point of origin, width, height
+        # If longitude min and max are both positive or negative,
+        # or the longitude min is negative and the longitude max is positive
+        if (self._lng_min &gt;= 0 and self._lng_max &gt;= 0) or \
+                (self._lng_min &lt;= 0 and self._lng_max &lt;= 0) or \
+                (self._lng_min &lt;= 0 and self._lng_max &gt;= 0):
+            # Prepare only one rectangle
+            rectangle_values = [
+                ((self._lng_min, self._lat_min),
+                 self._lng_max - self._lng_min,
+                 self._lat_max - self._lat_min)]
+        else:
+            # Otherwise, there are 2 rectangles, one on the far right.
+            # the other on the far left
+            rectangle_values = [
+                ((self._lng_min, self._lat_min),
+                 180 - self._lng_min,
+                 self._lat_max - self._lat_min),
+                ((-180, self._lat_min),
+                 self._lng_max + 180,
+                 self._lat_max - self._lat_min)
+            ]
+        # Return rectangle values
+        return rectangle_values</code></pre>
+</details>
+<h3>Static methods</h3>
+<dl>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.calculate_distance"><code class="name flex">
+<span>def <span class="ident">calculate_distance</span></span>(<span>row: pandas.core.series.Series, point_city_step: Tuple[float, float]) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It calculates the euclidean distance between the coordinates of a city and the current city</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>row</code></strong> :&ensp;<code>pd.Series</code></dt>
+<dd>Row of the dataframe of cities that are inside the grid</dd>
+<dt><strong><code>point_city_step</code></strong> :&ensp;<code>Tuple[float, float]</code></dt>
+<dd>Coordinates of the current city</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>Distance between the coordinates of a city and the current city</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def calculate_distance(row: pd.Series, point_city_step: Tuple[float, float]) -&gt; float:
+    &#34;&#34;&#34;It calculates the euclidean distance between the coordinates of a city and the current city
+
+    Parameters
+    ----------
+    row: pd.Series
+        Row of the dataframe of cities that are inside the grid
+    point_city_step: Tuple[float, float]
+        Coordinates of the current city
+
+    Returns
+    -------
+    float
+        Distance between the coordinates of a city and the current city
+    &#34;&#34;&#34;
+    return euclidean_distances([list(point_city_step)], [[row[&#34;lng&#34;], row[&#34;lat&#34;]]])[0][0]</code></pre>
+</details>
+</dd>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.calculate_weight"><code class="name flex">
+<span>def <span class="ident">calculate_weight</span></span>(<span>row: pandas.core.series.Series, country_step: str) ‑> int</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It sums the weight of the population and of the country</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>row</code></strong> :&ensp;<code>pd.Series</code></dt>
+<dd>Row of the dataframe of cities that are inside the grid</dd>
+<dt><strong><code>country_step</code></strong> :&ensp;<code>str</code></dt>
+<dd>Country of the current city</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>int</code></dt>
+<dd>Weight that sums the weights if the population is big and if the country is different</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def calculate_weight(row: pd.Series, country_step: str) -&gt; int:
+    &#34;&#34;&#34;It sums the weight of the population and of the country
+
+    Parameters
+    ----------
+    row: pd.Series
+        Row of the dataframe of cities that are inside the grid
+    country_step: str
+        Country of the current city
+
+    Returns
+    -------
+    int
+        Weight that sums the weights if the population is big and if the country is different
+    &#34;&#34;&#34;
+    # It assigns 2 if the population of the city is greater than 200000, 0 otherwise
+    pop_weight = 2 if row[&#34;flg_pop&#34;] == 1 else 0
+    # It assigns 2 if the country is different from the current country, 0 otherwise
+    country_weight = 2 if row[&#34;iso2&#34;] != country_step else 0
+    # It returns the sum of the previous weights
+    return pop_weight + country_weight</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.n_steps"><code class="name">var <span class="ident">n_steps</span></code></dt>
+<dd>
+<div class="desc"><p>_x_size_default : float
+Default size of the longitudinal side of the grid used to search for the nearest cities
+_y_size_default : float
+Default size of the latitudinal side of the grid used to search for the nearest cities</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.check_grid_city"><code class="name flex">
+<span>def <span class="ident">check_grid_city</span></span>(<span>self) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It generates a grid, it selects the cities in the grid and:
+if it contains at least n_min cities, it returns the dataframe
+if it doesn't contain at least n_min cities, it rises the grid size and recalculate the grid
+and reselect cities inside the new grid</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>Dataframe that contains the cities that are inside the grid</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_grid_city(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;It generates a grid, it selects the cities in the grid and:
+    if it contains at least n_min cities, it returns the dataframe
+    if it doesn&#39;t contain at least n_min cities, it rises the grid size and recalculate the grid
+    and reselect cities inside the new grid
+
+    Returns
+    -------
+    pd.DataFrame
+        Dataframe that contains the cities that are inside the grid
+    &#34;&#34;&#34;
+    # Initialise variables
+    n_row = 0
+    grid_city = pd.DataFrame()
+
+    while n_row &lt; self.n_min:
+        # Generate the grid used to search for the nearest cities
+        self.generate_grid()
+        # Select the cities that are inside the grid
+        grid_city = self.query()
+        # Get the number of the rows of the dataframe
+        n_row = grid_city.shape[0]
+        # It rises the grid size
+        self.x_size *= self.rise_factor
+        self.y_size *= self.rise_factor
+        # Check if the current city is close to the starting city
+        # and the latter is in the grid
+        self._is_near_destination = self._check_is_near_destination(grid_city)
+
+    # It assigns the default grid size
+    self.x_size = self._x_size_default
+    self.y_size = self._y_size_default
+    # It returns the dataframe that contains the cities that are inside the grid
+    return grid_city</code></pre>
+</details>
+</dd>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.generate_grid"><code class="name flex">
+<span>def <span class="ident">generate_grid</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate the grid used to search for the nearest cities
+as range of maximum and minimum latitudes and longitudes.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def generate_grid(self):
+    &#34;&#34;&#34;Generate the grid used to search for the nearest cities
+    as range of maximum and minimum latitudes and longitudes.
+    &#34;&#34;&#34;
+    # If the latitude of the current city is greater than the latitude of the starting city
+    if self._coord_step[1] &gt;= self._coord_start[1]:
+        # As latitude max is used the latitude of the current city plus half of the size of y_size
+        self._lat_max = self._coord_step[1] + self.y_size / 2
+        # As latitude min is used the latitude of the starting city minus half of the size of y_size
+        self._lat_min = self._coord_start[1] - self.y_size / 2
+    else:
+        # As latitude max is used the latitude of the starting city plus half of the size of y_size
+        self._lat_max = self._coord_start[1] + self.y_size / 2
+        # As latitude min is used the latitude of the current city minus half of the size of y_size
+        self._lat_min = self._coord_step[1] - self.y_size / 2
+
+    # The longitude min is the longitude of the current city
+    self._lng_min = self._coord_step[0]
+
+    # If it is near the destination
+    if self._is_near_destination:
+        # The longitude max is slightly higher than the starting longitude
+        self._lng_max = self._coord_start[0] + 0.005
+    else:
+        # The longitude max is the longitude of the current city plus x_size
+        self._lng_max = self._coord_step[0] + self.x_size
+
+    # Fix the latitude values of the grid
+    if self._lat_max &gt;= 90:
+        self._lat_max -= 180
+    if self._lat_min &lt;= -90:
+        self._lat_min += 180
+    # Fix the longitude values of the grid
+    if self._lng_max &gt;= 180:
+        self._lng_max -= 360
+    if self._lng_min &lt;= -180:
+        self._lng_min += 360</code></pre>
+</details>
+</dd>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.plot_world"><code class="name flex">
+<span>def <span class="ident">plot_world</span></span>(<span>self, is_clear_output: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It plots the world with the journey path</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>is_clear_output</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If it is true, the previous plot is cleared</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_world(self, is_clear_output: bool = False):
+    &#34;&#34;&#34;It plots the world with the journey path
+
+    Parameters
+    ----------
+    is_clear_output: bool
+        If it is true, the previous plot is cleared
+    &#34;&#34;&#34;
+    # Clear the previous plot, if it is true
+    if is_clear_output:
+        clear_output(wait=True)
+    # Select the visited cities
+    visited_df = self.dataframe.loc[(self.dataframe[&#34;visited_city&#34;] == 1)]
+    # Select the remaining cities
+    city_df = self.dataframe.loc[(self.dataframe[&#34;visited_city&#34;] == 0)]
+    # Prepare the plot figure and a subplot
+    fig = plt.figure(figsize=(100, 50))
+    ax = fig.add_subplot(111)
+    # Add a scatter plot of the not visited cities
+    ax.scatter(city_df.lng, city_df.lat, color=&#34;green&#34;, marker=&#34;o&#34;, alpha=0.5, s=30)
+    # Add a scatter plot of the visited cities
+    ax.scatter(visited_df.lng, visited_df.lat, color=&#34;magenta&#34;, marker=&#34;o&#34;, alpha=0.5, s=200)
+    # Add the point of starting coordinates
+    ax.scatter(self._coord_start[0], self._coord_start[1], color=&#34;red&#34;, marker=&#34;+&#34;, s=100)
+    # Assign labels
+    plt.xlabel(&#34;Longitude&#34;, fontsize=75)
+    plt.ylabel(&#34;Latitude&#34;, fontsize=75)
+    # Set axes limits
+    plt.xlim([-180, 180])
+    plt.ylim([-90, 90])
+    # Add the grid
+    ax.grid()
+
+    # If the latitude and longitude values exists
+    if (self._lng_min is not None and self._lng_max is not None and
+            self._lat_min is not None and self._lat_max is not None):
+        # Prepare the rectangles according to the coordinates max and min of the grid
+        rectangle_values = self._prepare_rectangle_values()
+        for origin_point, width, height in rectangle_values:
+            # Add the rectangle of the grid
+            ax.add_patch(
+                patches.Rectangle(
+                    xy=origin_point,  # Point of origin
+                    width=width,
+                    height=height,
+                    linewidth=3,
+                    color=&#34;blue&#34;,
+                    fill=False
+                )
+            )
+    # Plot the figure
+    plt.show()</code></pre>
+</details>
+</dd>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.query"><code class="name flex">
+<span>def <span class="ident">query</span></span>(<span>self) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Select the cities that are located within the grid,
+shaped by the range of maximum and minimum latitudes and longitudes.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>Dataframe that contains the cities that are inside the grid</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query(self) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;Select the cities that are located within the grid,
+    shaped by the range of maximum and minimum latitudes and longitudes.
+
+    Returns
+    -------
+    pd.DataFrame
+        Dataframe that contains the cities that are inside the grid
+    &#34;&#34;&#34;
+    # Initialise the conditions for the latitude and the longitude
+    lat_condition = False
+    lng_condition = False
+
+    # If both latitude values of the grid are positive or negative
+    if (self._lat_min &gt;= 0 and self._lat_max &gt;= 0) or (self._lat_min &lt;= 0 and self._lat_max &lt;= 0):
+        lat_condition = (self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= self._lat_max)
+    # If latitude min is positive and latitude max is negative
+    elif self._lat_min &gt;= 0 and self._lat_max &lt;= 0:
+        # The condition considers the highest and the lowest value of the latitude values
+        lat_condition = ((self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= 90)) | (
+                (self.dataframe[&#34;lat&#34;] &gt;= -90) &amp; (self.dataframe[&#34;lat&#34;] &lt;= self._lat_max))
+    # If latitude min is negative and latitude max is positive
+    elif self._lat_min &lt;= 0 and self._lat_max &gt;= 0:
+        # The condition considers the 0 value between the latitude values
+        lat_condition = ((self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= 0)) | (
+                (self.dataframe[&#34;lat&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lat&#34;] &lt; self._lat_max))
+
+    # If both longitude values of the grid are positive or negative
+    if (self._lng_min &gt;= 0 and self._lng_max &gt;= 0) or (self._lng_min &lt;= 0 and self._lng_max &lt;= 0):
+        lng_condition = (self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= self._lng_max)
+    # If longitude min is positive and longitude max is negative
+    elif self._lng_min &gt;= 0 and self._lng_max &lt;= 0:
+        # The condition considers the highest and the lowest value of the longitude values
+        lng_condition = ((self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= 180)) | (
+                (self.dataframe[&#34;lng&#34;] &gt;= -180) &amp; (self.dataframe[&#34;lng&#34;] &lt;= self._lng_max))
+    # If longitude min is negative and longitude max is positive
+    elif self._lng_min &lt;= 0 and self._lng_max &gt;= 0:
+        # The condition considers the 0 value between the longitude values
+        lng_condition = ((self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= 0)) | (
+                (self.dataframe[&#34;lng&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lng&#34;] &lt; self._lng_max))
+
+    # Select the rows that verifies the latitude and longitude condition
+    grid_city = self.dataframe.loc[lat_condition &amp; lng_condition &amp;
+                                   (self.dataframe[&#34;city&#34;] != self._city_step) &amp;
+                                   (self.dataframe[&#34;visited_city&#34;] == 0)]
+    # print(grid_city)
+    # It returns the dataframe that contains the cities that are inside the grid
+    return grid_city</code></pre>
+</details>
+</dd>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.step"><code class="name flex">
+<span>def <span class="ident">step</span></span>(<span>self, grid_city: pandas.core.frame.DataFrame)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It gets the smallest weight from the nearest cities and it updates:
+the current city values, the hours, the number of steps, the visited city column of the dataframe,
+it adds the selected city to the list of all visited cities</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>grid_city</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataframe of cities that are inside the grid</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def step(self, grid_city: pd.DataFrame):
+    &#34;&#34;&#34;It gets the smallest weight from the nearest cities and it updates:
+    the current city values, the hours, the number of steps, the visited city column of the dataframe,
+    it adds the selected city to the list of all visited cities
+
+    Parameters
+    ----------
+    grid_city : pd.DataFrame
+        Dataframe of cities that are inside the grid
+    &#34;&#34;&#34;
+    # Sort nearest cities by the weight and distance
+    # For the same weight, the city with the shortest distance is taken
+    grid_city.sort_values(by=[&#34;weight&#34;, &#34;distance&#34;], ascending=[True, False], inplace=True)
+    # Select the first row
+    step = grid_city.iloc[0]
+    # Update the current city values: coordinates, city and country
+    self._coord_step = tuple(step[[&#34;lng&#34;, &#34;lat&#34;]])
+    self._city_step = step[&#34;city&#34;]
+    self._country_step = step[&#34;iso2&#34;]
+    # Increase the hours of the journey
+    self.hours += step[&#34;weight&#34;]
+    # Increase the number of steps
+    self.n_steps += 1
+    # Mark the visited city
+    self.dataframe[&#34;visited_city&#34;].iloc[step.name] = 1
+    # Add the nearest city to the list of all visited cities
+    self.map_city = self.map_city.append(step[[&#34;city&#34;, &#34;lat&#34;, &#34;lng&#34;, &#34;country&#34;, &#34;iso2&#34;]])</code></pre>
+</details>
+</dd>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.stop_condition"><code class="name flex">
+<span>def <span class="ident">stop_condition</span></span>(<span>self, grid_city: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It checks if the coordinates of the start city are inside the grid:
+if it is true, it returns a dataframe with only the row of the starting city
+if it is false, it does nothing and it returns the given dataframe</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>grid_city</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataframe of cities that are inside the grid</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>Dataframe that contains the nearest cities or only the start city</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stop_condition(self, grid_city: pd.DataFrame) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;It checks if the coordinates of the start city are inside the grid:
+    if it is true, it returns a dataframe with only the row of the starting city
+    if it is false, it does nothing and it returns the given dataframe
+
+    Parameters
+    ----------
+    grid_city : pd.DataFrame
+        Dataframe of cities that are inside the grid
+
+    Returns
+    -------
+    pd.DataFrame
+        Dataframe that contains the nearest cities or only the start city
+    &#34;&#34;&#34;
+    # Select the row that contains the starting coordinates from the grid dataframe
+    temp_grid_city = grid_city.loc[
+        (grid_city[&#34;lng&#34;] == self._coord_start[0]) &amp;
+        (grid_city[&#34;lat&#34;] == self._coord_start[1])]
+    # If the starting coordinates are inside the grid dataframe
+    if len(temp_grid_city) == 1:
+        # It assigns the row of the starting city to the grid city
+        grid_city = temp_grid_city
+    # It returns the grid city
+    return grid_city</code></pre>
+</details>
+</dd>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.travel"><code class="name flex">
+<span>def <span class="ident">travel</span></span>(<span>self, is_intermediate_plot: bool = True, n_intermediate_step: int = 100, is_clear_output: bool = False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It calculates the cities to visit until it returns to the starting city.
+It plots the journey every n_intermediate_step, if is_intermediate_plot is true</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>is_intermediate_plot</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If it is true, it plots the intermediate journey</dd>
+<dt><strong><code>n_intermediate_step</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number of the step the plot is printed</dd>
+<dt><strong><code>is_clear_output</code></strong> :&ensp;<code>bool</code></dt>
+<dd>If it is true, the previous plot is cleared</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def travel(self, is_intermediate_plot: bool = True, n_intermediate_step: int = 100, is_clear_output: bool = False):
+    &#34;&#34;&#34;It calculates the cities to visit until it returns to the starting city.
+    It plots the journey every n_intermediate_step, if is_intermediate_plot is true
+
+    Parameters
+    ----------
+    is_intermediate_plot: bool
+        If it is true, it plots the intermediate journey
+    n_intermediate_step: int
+        Number of the step the plot is printed
+    is_clear_output: bool
+        If it is true, the previous plot is cleared
+    &#34;&#34;&#34;
+    # Get the start time
+    start = time.time()
+    # Plot the world, if the variable is true
+    if is_intermediate_plot:
+        self.plot_world(is_clear_output)
+    # While the current city is different from the starting city or it is the first step
+    while (self.city_start != self._city_step) or (self.country_start != self._country_step) or (self.n_steps == 0):
+        # Generate a grid that contains at least n_min nearest cities
+        grid_city = self.check_grid_city()
+        # Calculate the weight of the n_min nearest cities
+        grid_city_weight = self.weight(grid_city)
+        # Check if the starting city is in the grid
+        grid_city_weight = self.stop_condition(grid_city_weight)
+        # Updates the current city, the number of hours of the journey and so on
+        self.step(grid_city_weight)
+        # Plot the intermediate journey, if the variable is true, every n_intermediate_step
+        if is_intermediate_plot and self.n_steps % n_intermediate_step == 0:
+            self.plot_world(is_clear_output)
+    # Plot the world with the completed journey, if the variable is true
+    if is_intermediate_plot:
+        self.plot_world(is_clear_output)
+    print(f&#34;Completed the journey starting from {self.city_start} ({self.country_start})&#34;,
+          f&#34;in {self.hours / 24:.2f} days ({self.hours} hours) after visited {self.n_steps} cities.&#34;)
+    # Get and print the elapsed time
+    elapsed = time.time() - start
+    print(f&#34;Done in {elapsed:.2f} seconds.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.weight"><code class="name flex">
+<span>def <span class="ident">weight</span></span>(<span>self, grid_city: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>It generates a grid, it selects the cities in the grid and:
+if it contains at least n_min cities, it returns the dataframe
+if it doesn't contain at least n_min cities, it rises the grid size and it calls itself</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>grid_city</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
+<dd>Dataframe of cities that are inside the grid</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>pd.DataFrame</code></dt>
+<dd>Dataframe that contains the nearest cities with assigned weights</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def weight(self, grid_city: pd.DataFrame) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;It generates a grid, it selects the cities in the grid and:
+    if it contains at least n_min cities, it returns the dataframe
+    if it doesn&#39;t contain at least n_min cities, it rises the grid size and it calls itself
+
+    Parameters
+    ----------
+    grid_city : pd.DataFrame
+        Dataframe of cities that are inside the grid
+
+    Returns
+    -------
+    pd.DataFrame
+        Dataframe that contains the nearest cities with assigned weights
+    &#34;&#34;&#34;
+    # Calculate the distance between the current coordinates and the coordinates of the cities in the grid
+    grid_city[&#34;distance&#34;] = grid_city.apply(self.calculate_distance, axis=1, point_city_step=self._coord_step)
+    # Sort the cities by distance
+    grid_city.sort_values(by=[&#34;distance&#34;], inplace=True)
+    # Get the first n_min rows (the nearest cities)
+    grid_city = grid_city[:self.n_min]
+    # Add a weight given by the distance,
+    # the first nearest city has weight 2, the second 4 and the third 8
+    grid_city[&#34;weight&#34;] = [2 ** x for x in range(1, self.n_min + 1)]
+    # Add a weight given by the population of the city and the different country
+    grid_city[&#34;weight&#34;] += grid_city.apply(self.calculate_weight, axis=1, country_step=self._country_step)
+    # Returns the dataframe with the nearest cities and the assigned weight
+    return grid_city</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="around_the_world_in_eighty_days" href="index.html">around_the_world_in_eighty_days</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld">AroundTheWorld</a></code></h4>
+<ul class="two-column">
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.calculate_distance" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.calculate_distance">calculate_distance</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.calculate_weight" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.calculate_weight">calculate_weight</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.check_grid_city" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.check_grid_city">check_grid_city</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.generate_grid" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.generate_grid">generate_grid</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.n_steps" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.n_steps">n_steps</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.plot_world" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.plot_world">plot_world</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.query" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.query">query</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.step" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.step">step</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.stop_condition" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.stop_condition">stop_condition</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.travel" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.travel">travel</a></code></li>
+<li><code><a title="around_the_world_in_eighty_days.around_the_world.AroundTheWorld.weight" href="#around_the_world_in_eighty_days.around_the_world.AroundTheWorld.weight">weight</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
