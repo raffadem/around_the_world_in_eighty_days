@@ -245,7 +245,7 @@ class AroundTheWorld(object):
         elif self._lat_min &lt;= 0 and self._lat_max &gt;= 0:
             # The condition considers the 0 value between the latitude values
             lat_condition = ((self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= 0)) | (
-                    (self.dataframe[&#34;lat&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lat&#34;] &lt; self._lat_max))
+                    (self.dataframe[&#34;lat&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lat&#34;] &lt;= self._lat_max))
 
         # If both longitude values of the grid are positive or negative
         if (self._lng_min &gt;= 0 and self._lng_max &gt;= 0) or (self._lng_min &lt;= 0 and self._lng_max &lt;= 0):
@@ -259,7 +259,7 @@ class AroundTheWorld(object):
         elif self._lng_min &lt;= 0 and self._lng_max &gt;= 0:
             # The condition considers the 0 value between the longitude values
             lng_condition = ((self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= 0)) | (
-                    (self.dataframe[&#34;lng&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lng&#34;] &lt; self._lng_max))
+                    (self.dataframe[&#34;lng&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lng&#34;] &lt;= self._lng_max))
 
         # Select the rows that verifies the latitude and longitude condition
         grid_city = self.dataframe.loc[lat_condition &amp; lng_condition &amp;
@@ -325,9 +325,9 @@ class AroundTheWorld(object):
         return is_destination_in_grid and is_longitude_close
 
     def weight(self, grid_city: pd.DataFrame) -&gt; pd.DataFrame:
-        &#34;&#34;&#34;It generates a grid, it selects the cities in the grid and:
-        if it contains at least n_min cities, it returns the dataframe
-        if it doesn&#39;t contain at least n_min cities, it rises the grid size and it calls itself
+        &#34;&#34;&#34;It adds the distance column to the dataframe grid_city, 
+        extracts the 3 nearest cities and assigns them a weight, respectively the values 2,4,8.
+        It sums the weight obtained previously with the one of population and country.
 
         Parameters
         ----------
@@ -481,8 +481,7 @@ class AroundTheWorld(object):
             if is_intermediate_plot and self.n_steps % n_intermediate_step == 0:
                 self.plot_world(is_clear_output)
         # Plot the world with the completed journey, if the variable is true
-        if is_intermediate_plot:
-            self.plot_world(is_clear_output)
+        self.plot_world(is_clear_output)
         print(f&#34;Completed the journey starting from {self.city_start} ({self.country_start})&#34;,
               f&#34;in {self.hours / 24:.2f} days ({self.hours} hours) after visited {self.n_steps} cities.&#34;)
         # Get and print the elapsed time
@@ -826,7 +825,7 @@ class AroundTheWorld(object):
         elif self._lat_min &lt;= 0 and self._lat_max &gt;= 0:
             # The condition considers the 0 value between the latitude values
             lat_condition = ((self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= 0)) | (
-                    (self.dataframe[&#34;lat&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lat&#34;] &lt; self._lat_max))
+                    (self.dataframe[&#34;lat&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lat&#34;] &lt;= self._lat_max))
 
         # If both longitude values of the grid are positive or negative
         if (self._lng_min &gt;= 0 and self._lng_max &gt;= 0) or (self._lng_min &lt;= 0 and self._lng_max &lt;= 0):
@@ -840,7 +839,7 @@ class AroundTheWorld(object):
         elif self._lng_min &lt;= 0 and self._lng_max &gt;= 0:
             # The condition considers the 0 value between the longitude values
             lng_condition = ((self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= 0)) | (
-                    (self.dataframe[&#34;lng&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lng&#34;] &lt; self._lng_max))
+                    (self.dataframe[&#34;lng&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lng&#34;] &lt;= self._lng_max))
 
         # Select the rows that verifies the latitude and longitude condition
         grid_city = self.dataframe.loc[lat_condition &amp; lng_condition &amp;
@@ -906,9 +905,9 @@ class AroundTheWorld(object):
         return is_destination_in_grid and is_longitude_close
 
     def weight(self, grid_city: pd.DataFrame) -&gt; pd.DataFrame:
-        &#34;&#34;&#34;It generates a grid, it selects the cities in the grid and:
-        if it contains at least n_min cities, it returns the dataframe
-        if it doesn&#39;t contain at least n_min cities, it rises the grid size and it calls itself
+        &#34;&#34;&#34;It adds the distance column to the dataframe grid_city, 
+        extracts the 3 nearest cities and assigns them a weight, respectively the values 2,4,8.
+        It sums the weight obtained previously with the one of population and country.
 
         Parameters
         ----------
@@ -1062,8 +1061,7 @@ class AroundTheWorld(object):
             if is_intermediate_plot and self.n_steps % n_intermediate_step == 0:
                 self.plot_world(is_clear_output)
         # Plot the world with the completed journey, if the variable is true
-        if is_intermediate_plot:
-            self.plot_world(is_clear_output)
+        self.plot_world(is_clear_output)
         print(f&#34;Completed the journey starting from {self.city_start} ({self.country_start})&#34;,
               f&#34;in {self.hours / 24:.2f} days ({self.hours} hours) after visited {self.n_steps} cities.&#34;)
         # Get and print the elapsed time
@@ -1457,7 +1455,7 @@ shaped by the range of maximum and minimum latitudes and longitudes.</p>
     elif self._lat_min &lt;= 0 and self._lat_max &gt;= 0:
         # The condition considers the 0 value between the latitude values
         lat_condition = ((self.dataframe[&#34;lat&#34;] &gt;= self._lat_min) &amp; (self.dataframe[&#34;lat&#34;] &lt;= 0)) | (
-                (self.dataframe[&#34;lat&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lat&#34;] &lt; self._lat_max))
+                (self.dataframe[&#34;lat&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lat&#34;] &lt;= self._lat_max))
 
     # If both longitude values of the grid are positive or negative
     if (self._lng_min &gt;= 0 and self._lng_max &gt;= 0) or (self._lng_min &lt;= 0 and self._lng_max &lt;= 0):
@@ -1471,7 +1469,7 @@ shaped by the range of maximum and minimum latitudes and longitudes.</p>
     elif self._lng_min &lt;= 0 and self._lng_max &gt;= 0:
         # The condition considers the 0 value between the longitude values
         lng_condition = ((self.dataframe[&#34;lng&#34;] &gt;= self._lng_min) &amp; (self.dataframe[&#34;lng&#34;] &lt;= 0)) | (
-                (self.dataframe[&#34;lng&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lng&#34;] &lt; self._lng_max))
+                (self.dataframe[&#34;lng&#34;] &gt;= 0) &amp; (self.dataframe[&#34;lng&#34;] &lt;= self._lng_max))
 
     # Select the rows that verifies the latitude and longitude condition
     grid_city = self.dataframe.loc[lat_condition &amp; lng_condition &amp;
@@ -1626,8 +1624,7 @@ It plots the journey every n_intermediate_step, if is_intermediate_plot is true<
         if is_intermediate_plot and self.n_steps % n_intermediate_step == 0:
             self.plot_world(is_clear_output)
     # Plot the world with the completed journey, if the variable is true
-    if is_intermediate_plot:
-        self.plot_world(is_clear_output)
+    self.plot_world(is_clear_output)
     print(f&#34;Completed the journey starting from {self.city_start} ({self.country_start})&#34;,
           f&#34;in {self.hours / 24:.2f} days ({self.hours} hours) after visited {self.n_steps} cities.&#34;)
     # Get and print the elapsed time
@@ -1639,9 +1636,9 @@ It plots the journey every n_intermediate_step, if is_intermediate_plot is true<
 <span>def <span class="ident">weight</span></span>(<span>self, grid_city: pandas.core.frame.DataFrame) ‑> pandas.core.frame.DataFrame</span>
 </code></dt>
 <dd>
-<div class="desc"><p>It generates a grid, it selects the cities in the grid and:
-if it contains at least n_min cities, it returns the dataframe
-if it doesn't contain at least n_min cities, it rises the grid size and it calls itself</p>
+<div class="desc"><p>It adds the distance column to the dataframe grid_city,
+extracts the 3 nearest cities and assigns them a weight, respectively the values 2,4,8.
+It sums the weight obtained previously with the one of population and country.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>grid_city</code></strong> :&ensp;<code>pd.DataFrame</code></dt>
@@ -1657,9 +1654,9 @@ if it doesn't contain at least n_min cities, it rises the grid size and it calls
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def weight(self, grid_city: pd.DataFrame) -&gt; pd.DataFrame:
-    &#34;&#34;&#34;It generates a grid, it selects the cities in the grid and:
-    if it contains at least n_min cities, it returns the dataframe
-    if it doesn&#39;t contain at least n_min cities, it rises the grid size and it calls itself
+    &#34;&#34;&#34;It adds the distance column to the dataframe grid_city, 
+    extracts the 3 nearest cities and assigns them a weight, respectively the values 2,4,8.
+    It sums the weight obtained previously with the one of population and country.
 
     Parameters
     ----------
