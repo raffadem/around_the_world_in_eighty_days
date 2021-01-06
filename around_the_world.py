@@ -403,7 +403,7 @@ class AroundTheWorld(object):
             Dataframe of cities that are inside the grid
         """
         # Sort nearest cities by the weight and distance
-        # For the same weight, the city with the shortest distance is taken
+        # For the same weight, the city with the greatest distance is taken
         grid_city.sort_values(by=["weight", "distance"], ascending=[True, False], inplace=True)
         # Select the first row
         step = grid_city.iloc[0]
