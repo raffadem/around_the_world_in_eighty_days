@@ -217,7 +217,7 @@ class AroundTheWorld(object):
         elif self._lat_min <= 0 and self._lat_max >= 0:
             # The condition considers the 0 value between the latitude values
             lat_condition = ((self.dataframe["lat"] >= self._lat_min) & (self.dataframe["lat"] <= 0)) | (
-                    (self.dataframe["lat"] >= 0) & (self.dataframe["lat"] < self._lat_max))
+                    (self.dataframe["lat"] >= 0) & (self.dataframe["lat"] <= self._lat_max))
 
         # If both longitude values of the grid are positive or negative
         if (self._lng_min >= 0 and self._lng_max >= 0) or (self._lng_min <= 0 and self._lng_max <= 0):
@@ -231,7 +231,7 @@ class AroundTheWorld(object):
         elif self._lng_min <= 0 and self._lng_max >= 0:
             # The condition considers the 0 value between the longitude values
             lng_condition = ((self.dataframe["lng"] >= self._lng_min) & (self.dataframe["lng"] <= 0)) | (
-                    (self.dataframe["lng"] >= 0) & (self.dataframe["lng"] < self._lng_max))
+                    (self.dataframe["lng"] >= 0) & (self.dataframe["lng"] <= self._lng_max))
 
         # Select the rows that verifies the latitude and longitude condition
         grid_city = self.dataframe.loc[lat_condition & lng_condition &
@@ -297,9 +297,9 @@ class AroundTheWorld(object):
         return is_destination_in_grid and is_longitude_close
 
     def weight(self, grid_city: pd.DataFrame) -> pd.DataFrame:
-        """It generates a grid, it selects the cities in the grid and:
-        if it contains at least n_min cities, it returns the dataframe
-        if it doesn't contain at least n_min cities, it rises the grid size and it calls itself
+        """It adds the distance column to the dataframe grid_city, 
+        extracts the 3 nearest cities and assigns them a weight, respectively the values 2,4,8.
+        It sums the weight obtained previously with the one of population and country.
 
         Parameters
         ----------
@@ -453,8 +453,7 @@ class AroundTheWorld(object):
             if is_intermediate_plot and self.n_steps % n_intermediate_step == 0:
                 self.plot_world(is_clear_output)
         # Plot the world with the completed journey, if the variable is true
-        if is_intermediate_plot:
-            self.plot_world(is_clear_output)
+        self.plot_world(is_clear_output)
         print(f"Completed the journey starting from {self.city_start} ({self.country_start})",
               f"in {self.hours / 24:.2f} days ({self.hours} hours) after visited {self.n_steps} cities.")
         # Get and print the elapsed time
